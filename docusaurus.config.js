@@ -89,7 +89,7 @@ const config = {
             position: 'left',
             label: 'Tutorial',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/blog', label: 'Review', position: 'left'},
           {
             href: 'https://github.com/piky',
             label: 'GitHub',
