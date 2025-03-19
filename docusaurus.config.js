@@ -47,7 +47,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/piky/blog',
         },
         blog: {
           showReadingTime: true,
@@ -58,7 +58,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/piky/blog',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -91,9 +91,9 @@ const config = {
           },
           {to: '/blog', label: 'Review', position: 'left'},
           {
-            href: 'https://github.com/piky',
-            label: 'GitHub',
+            type: 'html',
             position: 'right',
+            value: '<a href="https://github.com/piky"><img border="0" alt="GitHub" src="img/icons8-github.svg" width="35" height="35"></a>',
           },
         ],
       },
