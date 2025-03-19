@@ -11,7 +11,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'My Playground, My Memory',
-  tagline: 'Knowledge belong to mankind, experience belong to individual.',
+  tagline: 'Knowledge belongs to mankind; experience belongs to a person.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
