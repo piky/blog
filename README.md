@@ -1,6 +1,6 @@
 # Website
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Please visit the website at[Blog](https://piky.github.io/blog/), which is automatically built by GitHub Actions upon pull requests.
 
 ### Installation
 
