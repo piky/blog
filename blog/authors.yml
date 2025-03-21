@@ -21,3 +21,15 @@ slorber:
     linkedin: sebastienlorber
     github: slorber
     newsletter: https://thisweekinreact.com
+
+piky:
+  name: Wijai Thongsom
+  title: Tech enthusiast
+  url: https://khainui.com
+  image_url: https://github.com/piky.png
+  page:
+    # customize the url of the author page at /blog/authors/<permalink>
+    permalink: '/all-piky-rarticles'
+  socials:
+    linkedin: wijai-thongsom
+    github: piky
