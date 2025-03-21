@@ -34,6 +34,7 @@ jobs:
     steps: 
       - uses: actions/checkout@v4
       - name: Create Pull Request
+        id: pull-request
         run: |
           gh pr create --title "My Pull Request" --body "Description" || gh pr edit --title "My Pull Request" --body "Description"
         env:
