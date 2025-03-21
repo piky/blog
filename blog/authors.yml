@@ -29,7 +29,7 @@ piky:
   image_url: https://github.com/piky.png
   page:
     # customize the url of the author page at /blog/authors/<permalink>
-    permalink: '/all-piky-rarticles'
+    permalink: '/all-piky-articles'
   socials:
     linkedin: wijai-thongsom
     github: piky
