@@ -29,6 +29,7 @@ jobs:
   pull-request:
     name: Create Pull request
     needs: test-deploy
+    permissions: write-all
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v4
