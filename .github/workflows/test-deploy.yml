@@ -36,9 +36,6 @@ jobs:
       - name: Create Pull Request
         id: pull-request
         run: |
-          gh pr create --title "My Pull Request" --body "Description" || gh pr edit --title "My Pull Request" --body "Description"
+          gh pr create --title "My Pull Request" --body "Description" || gh pr edit --title "My Pull Request" --body "Description" >> "$GITHUB_OUTPUT"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-      - name: Generate output
-        run: echo "The PR is at ${{ steps.pull-request.outputs.url }}"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
