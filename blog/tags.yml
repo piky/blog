@@ -52,3 +52,8 @@ gitops:
   label: GitOps
   permalink: /gitops
   description: Pull-based deployment using git repo as the single source of truth
+
+platform-engineering:
+  label: Platform Engineering
+  permalink: /platform-engineering
+  description: Developer experience with policy first
