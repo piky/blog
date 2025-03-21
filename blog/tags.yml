@@ -3,17 +3,37 @@ facebook:
   permalink: /facebook
   description: Facebook tag description
 
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
-
 docusaurus:
   label: Docusaurus
   permalink: /docusaurus
   description: Docusaurus tag description
 
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+docker:
+  label: Docker
+  permalink: /Docker
+  description: Software containerised platform
+
+devops:
+  label: DevOps
+  permalink: /DevOps
+  description: Cross-functional & collaborative culture
+
+cloud:
+  label: Cloud
+  permalink: /cloud
+  description: API-bassed technology suites
+
+cloud-native:
+  label: Cloud native
+  permalink: /cloud-native
+  description: Containerised-first apps & services running on Cloud
+
+kubernetes:
+  label: Kubernetes
+  permalink: /kubernetes
+  description: Containerised-apps orchestrator
+
+iac:
+  label: Infrastructure as Code
+  permalink: /IaC
+  description: Infrastructure as Code
