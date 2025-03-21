@@ -2,7 +2,7 @@ name: Test deployment
 
 on:
   push:
-    branches-ignore::
+    branches-ignore:
       - main
       - gh-pages
     # Review gh actions docs if you want to further define triggers, paths, etc
