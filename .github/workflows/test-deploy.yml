@@ -39,3 +39,5 @@ jobs:
           gh pr create --title "My Pull Request" --body "Description" || gh pr edit --title "My Pull Request" --body "Description"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    outputs:
+      url: ${{ steps.pull-request.outputs.url }}
