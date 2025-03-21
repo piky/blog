@@ -35,3 +35,5 @@ jobs:
       - name: pull-request
         run: |
           gh pr create --title "My pull request" --body "Description" || gh pr edit --title "My pull request" --body "Description"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
