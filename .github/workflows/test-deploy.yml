@@ -27,14 +27,14 @@ jobs:
         run: yarn build
 
   pull-request:
-    name: Create Pull request
+    name: Create Pull Request
     needs: test-deploy
     permissions: write-all
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v4
-      - name: pull-request
+      - name: Create Pull Request
         run: |
-          gh pr create --title "My pull request" --body "Description" || gh pr edit --title "My pull request" --body "Description"
+          gh pr create --title "My Pull Request" --body "Description" || gh pr edit --title "My Pull Request" --body "Description"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
