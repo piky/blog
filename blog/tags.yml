@@ -37,3 +37,8 @@ iac:
   label: Infrastructure as Code
   permalink: /IaC
   description: Infrastructure as Code
+
+sre:
+  label: SRE
+  permalink: /sre
+  description: Site Reliability Engineering
