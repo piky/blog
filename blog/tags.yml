@@ -47,7 +47,8 @@ container:
   label: Container
   permalink: /container
   description: Containerisation application
+
 gitops:
-  lable: GitOps
+  label: GitOps
   permalink: /gitops
   description: Pull-based deployment using git repo as the single source of truth

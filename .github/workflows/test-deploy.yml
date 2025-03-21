@@ -2,7 +2,7 @@ name: Test deployment
 
 on:
   push:
-    branches-ignore::
+    branches-ignore:
       - main
       - gh-pages
     # Review gh actions docs if you want to further define triggers, paths, etc
@@ -29,10 +29,12 @@ jobs:
   pull-request:
     name: Create Pull request
     needs: test-deploy
+    permissions: write-all
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v4
       - name: pull-request
         run: |
-          gh_pr_up() { gh pr create $* || gh pr edit $* }
-          gh_pr_up --title "My pull request" --body "Description"
+          gh pr create --title "My pull request" --body "Description" || gh pr edit --title "My pull request" --body "Description"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
