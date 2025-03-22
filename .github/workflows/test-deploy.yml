@@ -31,7 +31,7 @@ jobs:
     needs: test-deploy
     permissions: write-all
     environment: 
-      name: pull-request-url
+      name: draft 
       url: ${{ steps.create_pr.outputs.url }}
     runs-on: ubuntu-latest
     steps: 
