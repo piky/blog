@@ -34,7 +34,7 @@ jobs:
 
     environment:
       name: pull-request
-      url: ${{ steps.create_pr.outputs.url }}
+      url: ${{ steps.create_pr.outputs.pr_url }}
 
     runs-on: ubuntu-latest
     steps: 
@@ -42,7 +42,9 @@ jobs:
       - name: Create PR
         id: create_pr
         run: |
-          gh pr create --title "My Pull Request #37" --body "Description" || gh pr edit --title "My Pull Request" --body "Description" && export PR_URL="$_"
-          echo $PR_URL
+          gh pr create --title "My Pull Request #37" --body "Description" || gh pr edit --title "My Pull Request" --body "Description"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
+        outputs:
+          pr_url: ${{ steps.create_pr.outputs.pr_url }}
