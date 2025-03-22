@@ -29,12 +29,18 @@ jobs:
   pull-request:
     name: Create Pull Request
     needs: test-deploy
+
     permissions: write-all
+
+    environment:
+      name: pull-request
+      url: ${{ steps.create_pr.outputs.page_url }}
+
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v4
-      - name: Create Pull Request
-        id: pull-request
+      - name: Create PR
+        id: create_pr
         run: |
           gh pr create --title "My Pull Request" --body "Description" || gh pr edit --title "My Pull Request" --body "Description"
         env:
