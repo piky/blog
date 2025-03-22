@@ -34,7 +34,7 @@ jobs:
 
     environment:
       name: pull-request
-      url: ${{ steps.create_pr.outputs }}
+      url: ${{ steps.create_pr.outputs.url }}
 
     runs-on: ubuntu-latest
     steps: 
