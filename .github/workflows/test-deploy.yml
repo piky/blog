@@ -33,7 +33,7 @@ jobs:
     permissions: write-all
 
     outputs:
-      pr_url: ${{ steps.create_pr.outputs.url }}
+      url: ${{ steps.create_pr.outputs.url }}
 
     runs-on: ubuntu-latest
     steps: 
@@ -41,7 +41,7 @@ jobs:
       - name: Create PR
         id: create_pr
         run: |
-          gh pr create --title "My Pull Request #39" --body "Description" || gh pr edit --title "My Pull Request" --body "Description" >> "$GITHUB_OUTPUT"
+          gh pr create --title "My Pull Request #41" --body "Description" || gh pr edit --title "My Pull Request" --body "Description" >> "$GITHUB_OUTPUT"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         continue-on-error: true
