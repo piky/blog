@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v4
-      - name: Create Pull Request
+      - name: Create PR
         id: pull-request
         run: |
           gh pr create --title "My Pull Request" --body "Description" || gh pr edit --title "My Pull Request" --body "Description"
