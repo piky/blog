@@ -29,20 +29,23 @@ jobs:
   pull-request:
     name: Create Pull Request
     needs: test-deploy
-
     permissions: write-all
-
     environment: 
       name: pull-request-url
       url: ${{ steps.create_pr.outputs.url }}
-
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Get full history
+          ref: ${{ github.head_ref }}
+      - name: Fetch all branches
+        run: |
+          git fetch origin main:main
       - name: Create PR
         id: create_pr
         run: |
-          pr_url=$(gh pr create --title "My Pull Request #48" --body "Description" || gh pr list --head ${{ github.ref_name }} --json url -q ".[0].url")
+          pr_url=$(gh pr create --fill --base main --head ${{ github.ref_name }} || gh pr list --head ${{ github.ref_name }} --json url -q ".[0].url")
           echo "url=$pr_url" >> $GITHUB_OUTPUT
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
