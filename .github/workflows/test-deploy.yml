@@ -29,21 +29,24 @@ jobs:
   pull-request:
     name: Create Pull Request
     needs: test-deploy
-
     permissions: write-all
-
     environment: 
       name: pull-request-url
       url: ${{ steps.create_pr.outputs.url }}
-
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Get full history
+          ref: ${{ github.head_ref }}
+      - name: Fetch all branches
+        run: |
+          git fetch origin main:main
       - name: Create PR
         id: create_pr
         run: |
           set -e
-          if ! pr_url=$(gh pr create --fill); then
+          if ! pr_url=$(gh pr create --base main --head ${{ github.ref_name }} --title "Update from ${{ github.ref_name }}" --body "Automated PR"); then
             if ! pr_url=$(gh pr list --head ${{ github.ref_name }} --json url -q ".[0].url"); then
               echo "Failed to create or find pull request"
               exit 1
