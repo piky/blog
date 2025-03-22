@@ -45,13 +45,7 @@ jobs:
       - name: Create PR
         id: create_pr
         run: |
-          set -e
-          if ! pr_url=$(gh pr create --base main --head ${{ github.ref_name }} --title "Update from ${{ github.ref_name }}" --body "Automated PR"); then
-            if ! pr_url=$(gh pr list --head ${{ github.ref_name }} --json url -q ".[0].url"); then
-              echo "Failed to create or find pull request"
-              exit 1
-            fi
-          fi
+          pr_url=$(gh pr create --fill --base main --head ${{ github.ref_name }} || gh pr list --head ${{ github.ref_name }} --json url -q ".[0].url")
           echo "url=$pr_url" >> $GITHUB_OUTPUT
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
