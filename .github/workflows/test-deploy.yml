@@ -42,8 +42,13 @@ jobs:
       - name: Create PR
         id: create_pr
         run: |
-          pr_url=$(gh pr create --fill --fill-verbose || gh pr list --head ${{ github.ref_name }} --json url -q ".[0].url")
+          set -e
+          if ! pr_url=$(gh pr create --fill); then
+            if ! pr_url=$(gh pr list --head ${{ github.ref_name }} --json url -q ".[0].url"); then
+              echo "Failed to create or find pull request"
+              exit 1
+            fi
+          fi
           echo "url=$pr_url" >> $GITHUB_OUTPUT
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        continue-on-error: false
