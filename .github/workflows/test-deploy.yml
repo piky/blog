@@ -42,7 +42,7 @@ jobs:
       - name: Create PR
         id: create_pr
         run: |
-          pr_url=$(gh pr create --title "My Pull Request #48" --body "Description" || gh pr list --head ${{ github.ref_name }} --json url -q ".[0].url")
+          pr_url=$(gh pr create --fill --fill-verbose || gh pr list --head ${{ github.ref_name }} --json url -q ".[0].url")
           echo "url=$pr_url" >> $GITHUB_OUTPUT
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
