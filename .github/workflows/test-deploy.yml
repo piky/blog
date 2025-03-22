@@ -42,7 +42,7 @@ jobs:
       - name: Create PR
         id: create_pr
         run: |
-          gh pr create --title "My Pull Request #43" --body "Description" || gh pr edit --title "My Pull Request" --body "Description" >> "$GITHUB_OUTPUT"
+          gh pr create --title "My Pull Request #44" --body "Description" || gh pr edit --title "My Pull Request" --body "Description" && export url="$_" >> "$GITHUB_OUTPUT"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         continue-on-error: true
