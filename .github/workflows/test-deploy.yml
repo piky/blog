@@ -32,9 +32,9 @@ jobs:
 
     permissions: write-all
 
-    environment:
-      name: pull-request
-      url: ${{ steps.create_pr.outputs.html_url }}
+    environment: 
+      name: pull-request-url
+      url: ${{ steps.create_pr.outputs.url }}
 
     runs-on: ubuntu-latest
     steps: 
@@ -42,6 +42,7 @@ jobs:
       - name: Create PR
         id: create_pr
         run: |
-          gh pr create --title "My Pull Request" --body "Description" || gh pr edit --title "My Pull Request" --body "Description"
+          pr_url=$(gh pr create --title "My Pull Request #48" --body "Description" || gh pr list --head ${{ github.ref_name }} --json url -q ".[0].url")
+          echo "url=$pr_url" >> $GITHUB_OUTPUT
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
