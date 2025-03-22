@@ -32,6 +32,9 @@ jobs:
 
     permissions: write-all
 
+    outputs:
+      pr_url: ${{ steps.create_pr.outputs.pr_url }}
+
     environment:
       name: pull-request
       url: ${{ steps.create_pr.outputs.pr_url }}
@@ -46,5 +49,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         continue-on-error: true
-        outputs:
-          pr_url: ${{ steps.create_pr.outputs.pr_url }}
