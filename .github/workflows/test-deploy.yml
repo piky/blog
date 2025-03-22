@@ -42,6 +42,6 @@ jobs:
       - name: Create PR
         id: create_pr
         run: |
-          gh pr create --title "My Pull Request" --body "Description" || gh pr edit --title "My Pull Request" --body "Description"
+          gh pr create --title "My Pull Request #31" --body "Description" || gh pr edit --title "My Pull Request" --body "Description"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
