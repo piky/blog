@@ -42,10 +42,10 @@ jobs:
       - name: Create PR
         id: create_pr
         run: |
-          pr_url=$(gh pr create --title "My Pull Request #45" --body "Description" --head ${{ github.ref }} --base main --json url -q ".url" || gh pr view --json url -q ".url")
-          echo "pr_url=$pr_url" >> $GITHUB_ENV
+          pr_url=$(gh pr create --title "My Pull Request #45" --body "Description" || gh pr list --head ${{ github.ref_name }} --json url -q ".[0].url")
+          echo "pr_url=$pr_url" >> $GITHUB_OUTPUT
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         continue-on-error: true
       - name: Set pull-request environment variable
-        run: echo "pull-request-url=${{ env.pr_url }}" >> $GITHUB_ENV
+        run: echo "pull-request-url=${{ steps.create_pr.outputs.pr_url }}" >> $GITHUB_ENV
