@@ -5,6 +5,13 @@ metadata:
   description: My personal blog to keep technical notes.
   annotations:
     github.com/project-slug: piky/blog
+    backstage.io/managed-by-location: url:http://github.com/backstage/piky/blog
+  tags:
+    - blog
+    - github-pages
+    - ssg
+  links:
+    - url: https://piky.github.io/blog/
 spec:
   type: website
   lifecycle: experimental
