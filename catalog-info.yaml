@@ -3,7 +3,10 @@ kind: Component
 metadata:
   name: piky-blog
   description: My personal blog to keep technical notes.
+  annotations:
+    github.com/project-slug: piky/blog
 spec:
   type: website
   lifecycle: experimental
   owner: Wijai Thongsom
+  system: static-site-generator
