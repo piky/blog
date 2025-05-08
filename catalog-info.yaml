@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: piky-blog
+  description: My personal blog to keep technical notes.
+spec:
+  type: website
+  lifecycle: experimental
+  owner: Wijai Thongsom
