@@ -11,11 +11,11 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'My Playground, My Memory',
-  tagline: 'Knowledge belongs to mankind; experience belongs to a person.',
+  tagline: 'Knowledge belongs to mankind; experience belongs to individual.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://piky.github.io/blog',
+  url: 'https://piky.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/blog',
