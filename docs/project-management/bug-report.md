@@ -1,4 +1,5 @@
 # Effective Bug Report
+When reporting a bug, please follow this template to ensure that all necessary information is included. This will help developers understand and resolve the issue more efficiently.
 1. **Title**: Provide a concise and descriptive title that summarizes the issue.
 2. **Environment**: Specify the environment where the bug was encountered, including:
    - Operating System (e.g., Windows, macOS, Linux)
