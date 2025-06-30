@@ -3,6 +3,7 @@ slug: long-blog-post
 title: Long Blog Post
 authors: piky 
 tags: [docusaurus]
+unlisted: true
 ---
 
 This is the summary of a very long blog post,
