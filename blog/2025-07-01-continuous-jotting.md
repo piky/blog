@@ -1,6 +1,6 @@
 ---
 slug: continuous-jotting
-title: continuous jotting
+title: Continuous Jotting
 authors: piky
 tags: [docusaurus]
 ---
