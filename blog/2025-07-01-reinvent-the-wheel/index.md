@@ -2,7 +2,7 @@
 slug: reinvent-the-wheel
 title: Reinventing the Wheel
 authors: piky
-tags: [docusaurus]
+tags: [opinion, public-policy]
 ---
 # Reinventing the Wheel
 &nbsp;&nbsp;งบประมาณโครงการภาครัฐ คือแหล่งรายได้หลักให้แก่เครือข่ายนักธุรกิจการเมืองและพวกพ้อง เมื่อ หน่วยงานรัฐทำโครงการใหม่จึงมักทำแอพหรือระบบลงทะเบียนเพื่อเก็บข้อมูลเดิมซ้ำๆ แทนที่จะยึดหลัก:

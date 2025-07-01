@@ -2,7 +2,7 @@
 slug: continuous-jotting
 title: Continuous Jotting
 authors: piky
-tags: [docusaurus]
+tags: [fyi, note]
 ---
 # New Home for Technical Notes
 &nbsp;&nbsp;ปรกติจดทุกอย่างใน Google Keep แล้วพบว่า Technical notes ทั้งหลาย ไม่ว่าจะเป็นคำสั่ง CLI, source code และ script รกรุงรังไปหมด ค้นหาทีก็แสนลำบาก รวมทั้งโพสต์ที่แชร์ลง Facebook แล้วมีความเห็นส่วนตัวที่ไม่อยากให้หายไป  
