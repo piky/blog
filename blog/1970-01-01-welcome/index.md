@@ -3,6 +3,7 @@ slug: welcome
 title: Welcome
 authors: piky
 tags: [facebook, docusaurus]
+unlisted: true
 ---
 
 [Docusaurus blogging feature](https://docusaurus.io/docs/blog) are powered by the [blog plugin](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog).
