@@ -93,7 +93,7 @@ const config = {
           {
             type: 'html',
             position: 'right',
-            value: '<a href="https://github.com/piky"><img border="0" alt="GitHub" src="img/icons8-github.svg" width="35" height="35"></a>',
+            value: '<a href="https://github.com/piky/blog"><img border="0" alt="GitHub" src="img/icons8-github.svg" width="35" height="35"></a>',
           },
         ],
       },
