@@ -1,6 +1,8 @@
 ---
 title: Abstraction
-tag:  [fyi, note]
+slug: abstraction
+tag:  [opinion, fyi, note]
+author: piky
 keywords: [abstraction, function, usage, implement, programming, software-development, vibe-coding, llm, generative-ai]
 ---
 **Abstraction** แยก _การใช้งาน_ (usage) ออกจาก _การทำงาน_ (function) ของระบบ(ที่ซับซ้อน)  

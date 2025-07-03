@@ -5,9 +5,9 @@ authors: piky
 tags: [fyi, note]
 ---
 # New Home for Technical Notes
-&nbsp;&nbsp;ปกติผมจะจดทุกอย่างไว้ใน Google Keep แต่พบว่าโน้ตทางเทคนิคต่างๆ ไม่ว่าจะเป็นคำสั่ง CLI, ซอร์สโค้ด หรือสคริปต์ เริ่มรกรุงรังและค้นหายากขึ้นทุกที รวมถึงโพสต์ที่เคยแชร์ลง Facebook ซึ่งมีความคิดเห็นส่วนตัวแนบไว้และไม่อยากให้สูญหาย 
+&nbsp;&nbsp;ปกติผมจะจดทุกอย่างไว้ใน [Google Keep](https://keep.google.com/) แต่พบว่าโน้ตทางเทคนิคต่างๆ ไม่ว่าจะเป็นคำสั่ง CLI, ซอร์สโค้ด หรือสคริปต์ เริ่มรกรุงรังและค้นหายากขึ้นทุกที รวมถึงโพสต์ที่เคยแชร์ลง Facebook ซึ่งมีความคิดเห็นส่วนตัวแนบไว้และไม่อยากให้สูญหาย 
 
-&nbsp;&nbsp;หลังจากทดลองใช้บริการ Web Hosting ที่รองรับ Static Site Generator ไม่ว่าจะเป็น Cloudflare Pages, Netlify, Vercel หรือ Render ในที่สุดก็เลือกใช้ GitHub Pages เพราะจัดการได้สะดวก ทั้งในแง่ของ workflow และเนื้อหา ทุกอย่างรวมอยู่ใน monorepo เดียว  
+&nbsp;&nbsp;หลังจากทดลองใช้บริการ Web Hosting ที่รองรับ Static Site Generator ไม่ว่าจะเป็น [Cloudflare Pages](https://pages.cloudflare.com/), [Netlify](https://www.netlify.com/), [Vercel](https://vercel.com/) หรือ [Render](https://render.com/) ในที่สุดก็เลือกใช้ [GitHub Pages](https://pages.github.com/) เพราะจัดการได้สะดวก ทั้งในแง่ของ workflow และเนื้อหา ทุกอย่างรวมอยู่ใน monorepo เดียว  
 <!-- truncate -->
 &nbsp;&nbsp;เนื้อหาจะเน้นไปที่การประยุกต์ใช้งาน (use cases) และบริบทของการใช้งาน (scenarios/context) มากกว่าการกล่าวถึงฟังก์ชันและคุณลักษณะของระบบ (functions and features) เนื่องจากผู้เขียนมีความเชื่อส่วนตัวว่า "Business and technology is tightly coupled." 
 
