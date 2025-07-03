@@ -5,14 +5,14 @@ authors: piky
 tags: [opinion, fyi, note]
 keywords: [abstraction, function, usage, implement, programming, software-development, vibe-coding, llm, generative-ai]
 ---
-:::tip Abstraction
-คือการแยก _การใช้งาน(usage)_ ออกจาก _การทำงาน(function)_ ที่ซับซ้อนของระบบ 
+:::note Abstraction
+คือ การแยก _การใช้งาน(usage)_ ที่ยุ่งยาก ออกจาก _การทำงาน(function)_ ของระบบที่ซับซ้อน
 :::
 
-:::info สนใจผลลัพธ์
-ถ้าต้องการแค่ _เพื่ออำนวยความสะดวก_
+:::warning สนใจผลลัพธ์
+ถ้าต้องการแค่ _"เพื่ออำนวยความสะดวก"_
 :::
 
-:::danger เข้าใจหลักการทำงาน
+:::danger เข้าใจหลักการทำงานและวิธีใช้งานอย่างถูกต้อง
 เมื่อประยุกต์ใช้เป็น _เครื่องมือทำมาหากิน_ (productive and professional tools)
 :::
