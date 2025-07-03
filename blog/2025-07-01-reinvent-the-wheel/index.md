@@ -14,4 +14,4 @@ _Don't Repeat Yourself!_
 _#อะเมซิ่งไทยแลนด์_
 _#เที่ยวไทยคนละครึ่ง2025_
 <!-- truncate -->
-![Amazing Thailand](./tat.jpeg)
+![Amazing Thailand](https://pub-44a464d4394a43d6834ffdc08038cb38.r2.dev/blog/tat.jpeg 'service unavailable')
