@@ -4,7 +4,7 @@ draft: true
 ---
 # Free Web Hosting for Blogs, and Businesses Branding
 :::danger
-วิธีการนี้ไม่เหมาะสำหรับ non-technical users
+วิธีการนี้ไม่เหมาะสำหรับ business หรือ non-technical users แนะนำว่าเสียเงินนิดหน่อย ปีละไม่กี่พันบาท ไปใช้บริการ Cloud CMS รายใหญ่่ที่มีความน่าเชื่อถือ อย่าง Cloudflare, WordPress.com, Wix, หรือ Squarespace
 :::
 content management system
 headlessCMS
