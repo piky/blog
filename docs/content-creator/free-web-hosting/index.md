@@ -3,7 +3,9 @@ title: Free Website Hosting
 draft: true
 ---
 # Free Web Hosting for Blogs, and Businesses Branding
-
+:::danger
+วิธีการนี้ไม่เหมาะสำหรับ non-technical users
+:::
 content management system
 headlessCMS
 JAMstack
