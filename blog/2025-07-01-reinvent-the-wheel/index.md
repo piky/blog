@@ -3,6 +3,7 @@ slug: reinvent-the-wheel
 title: Reinventing the Wheel
 authors: piky
 tags: [opinion, public-policy]
+keywords: [bureaucracy, tat, amazing-thailand,เที่ยวไทยคนละครึ่ง, government-projects]
 ---
 # Reinventing the Wheel
 &nbsp;&nbsp;งบประมาณโครงการภาครัฐ คือแหล่งรายได้หลักให้แก่เครือข่ายนักธุรกิจการเมืองและพวกพ้อง เมื่อหน่วยงานรัฐทำโครงการใหม่ จึงมักทำแอพหรือระบบลงทะเบียนเพื่อเก็บข้อมูลเดิมซ้ำๆ แทนที่จะยึดหลัก:
