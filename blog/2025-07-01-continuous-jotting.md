@@ -1,6 +1,6 @@
 ---
-slug: continuous-jotting
 title: Continuous Jotting
+slug: continuous-jotting
 authors: piky
 tags: [fyi, note]
 ---
