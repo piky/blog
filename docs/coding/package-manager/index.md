@@ -1,5 +1,9 @@
 ---
 title: UV Python Package Manager
+slug: uv-python-package-manager
+authors: [piky]
+tags: [coding, uv, python, package-manager, project-management, virtualenv, dependencies, package]
+keywords: [coding, uv, python, package-manager, project-management, virtualenv, dependencies, package]
 ---
 # Unified Python Project and Package Management
 ๊UV เป็น Package Manager สำหรับ Python ที่ช่วยให้การจัดการโปรเจกต์ Python ง่ายขึ้น โดยรวมเอาความสามารถในการจัดการโปรเจกต์, dependencies, package และ virtual environment ไว้ในเครื่องมือเดียว
