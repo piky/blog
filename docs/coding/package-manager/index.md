@@ -2,6 +2,7 @@
 title: UV Python Package Manager
 ---
 # Unified Python Project and Package Management
+๊UV เป็น Package Manager สำหรับ Python ที่ช่วยให้การจัดการโปรเจกต์ Python ง่ายขึ้น โดยรวมเอาความสามารถในการจัดการโปรเจกต์, dependencies, package และ virtual environment ไว้ในเครื่องมือเดียว
 :::tip tl;dr
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh  
