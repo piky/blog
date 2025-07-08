@@ -88,10 +88,13 @@ uv venv --python=3.9
 ```
 :::
 
-## จัดการ Package Dependencies
+## จัดการ Dependencies
 ติดตั้ง package dependencies ได้ง่ายๆ ด้วยคำสั่ง
 ```bash
 uv add requests
 ```
 
-## สร้างและส่ง Package ขึ้น Repository
+## สร้าง Package และส่งขึ้น Repository
+```bash
+uv package create
+uv package publish
