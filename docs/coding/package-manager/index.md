@@ -97,7 +97,16 @@ uv venv --python=3.9
 ```bash
 uv add requests
 ```
-
+## ใช้งาน Tools
+Tools เป็น Python package ประเภทหนึ่ง ที่เรียกใช้งานด้วย CLI
+_uvx_ ช่วยให้รัน tool ใช้งานได้เลยทันที โดยไม่ต้องติดตั้ง เช่น
+```sh
+uvx pycowsay 'hello world!'
+```
+และถ้าใช้แล้วชอบ จะติดตั้งถาวรเลยก็ได้ด้วยคำสั่ง
+```sh
+uv tool install ruff
+```
 ## สร้าง Package และส่งขึ้น Repository
 ```bash
 uv package create
