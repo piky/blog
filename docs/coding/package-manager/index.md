@@ -8,9 +8,13 @@ keywords: [coding, uv, python, package-manager, project-management, virtualenv, 
 # Unified Python Project and Package Management
 UV เป็นตัวจัดการ Package สำหรับภาษา Python ที่ช่วยให้การจัดการโปรเจกต์ Python ง่ายขึ้น โดยรวมเอาความสามารถในการจัดการโปรเจกต์, dependencies, package และ virtual environment ไว้ในเครื่องมือเดียว
 :::tip tl;dr
-```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh  
+```sh
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+```
 uv init --python=3.13 hello-world && cd "$_"
+```
+```sh
 source .venv/bin/activate
 ```
 :::
@@ -50,12 +54,12 @@ uv self update
 :::
 
 ## เริ่มต้นใช้งาน UV
-สร้าง directory(folder) เพื่อเก็บโปรเจกต์ใหม่ด้วยคำสั่ง
+สร้าง directory/folder เพื่อเก็บโปรเจกต์ใหม่ด้วยคำสั่ง
 ```bash
 mkdir -p hello-world && cd "$_"
 ```
-### สร้างโปรเจกต์ใหม่
-โดยระบุเวอร์ชั่นของ Python ที่ต้องการ พร้อมสร้าง git repository ใน directory ปัจจุบัน
+### สร้าง Python Project
+โดยระบุเวอร์ชั่นของ Python ที่ต้องการ  และ uv จะสร้าง git repository ใน directory ปัจจุบัน
 ```bash
 uv init --python=3.8 .
 ```
@@ -77,7 +81,7 @@ deactivate
 ```bash
 uv python list
 ```
-### ลงเฉพาะเวอร์ชันที่ต้องการ
+### ติดตั้งเฉพาะเวอร์ชันที่ต้องการ
 ```bash
 uv python install 3.10 3.11 3.12
 ```
