@@ -18,7 +18,7 @@ uv init --python=3.13 hello-world && cd "$_"
 source .venv/bin/activate
 ```
 :::
-## ที่มา
+## เหตุผลที่ควรใช้ UV
 คุณกำลังปวดหัวกับสิ่งเหล่านี้อยู่ใช่หรือไม่?
 - ต้องจัดการ Python project หลายโปรเจกต์ในเครื่องเดียว แต่ไม่อยากใช้ Docker
 - แต่ละ project ใช้ Python version แตกต่างกัน
@@ -97,9 +97,9 @@ uv venv --python=3.9
 ```bash
 uv add requests
 ```
-## ใช้งาน Tools
-Tools เป็น Python package ประเภทหนึ่ง ที่เรียกใช้งานด้วย CLI
-_uvx_ ช่วยให้รัน tool ใช้งานได้เลยทันที โดยไม่ต้องติดตั้ง เช่น
+## ใช้งาน Tools ด้วย uvx
+Tool เป็น Python package ประเภทหนึ่ง ที่เรียกใช้งานผ่าน CLI  
+_uvx_ ช่วยให้รัน tool แล้วใช้งานได้เลยทันที โดยไม่ต้องติดตั้งจริง  
 ```sh
 uvx pycowsay 'hello world!'
 ```
