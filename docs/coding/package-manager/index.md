@@ -6,27 +6,31 @@ tags: [coding, uv, python, package-manager, project-management, virtualenv, depe
 keywords: [coding, uv, python, package-manager, project-management, virtualenv, dependencies, package]
 ---
 # Unified Python Project and Package Management
-UV เป็นตัวจัดการ Package สำหรับภาษา Python ที่ช่วยให้การจัดการโปรเจกต์ Python ง่ายขึ้น โดยรวมเอาความสามารถในการจัดการโปรเจกต์, dependencies, package และ virtual environment ไว้ในเครื่องมือเดียว
+UV เป็นตัวจัดการ packages สำหรับภาษา Python ที่มีประสิทธิภาพสูงกว่า pip โดยรวมเอาความสามารถในการจัดการ projects, packages/dependencies และ virtual environment ไว้ในเครื่องมือเดียว ช่วยให้การจัดการ Python project ง่ายขึ้น 
 :::tip tl;dr
-```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh  
+```sh
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+```sh
 uv init --python=3.13 hello-world && cd "$_"
+```
+```sh
 source .venv/bin/activate
 ```
 :::
 ## ที่มา
 คุณกำลังปวดหัวกับสิ่งเหล่านี้อยู่ใช่หรือไม่?
-- ต้องจัดการโปรเจกต์ Python หลายโปรเจกต์ในเครื่องเดียว แต่ไม่อยากใช้ Docker
-- แต่ละโปรเจกต์ใช้ Python เวอร์ชันต่างกัน
+- ต้องจัดการ Python project หลายโปรเจกต์ในเครื่องเดียว แต่ไม่อยากใช้ Docker
+- แต่ละ project ใช้ Python version แตกต่างกัน
 - ต้องการสร้าง package และส่งขึ้น repo ได้ง่าย
 - ต้องการติดตั้ง dependencies ได้เร็วขึ้น
-- ต้องการเครื่องมือที่มีประสิทธิภาพสูง
+- ต้องการเครื่องมือที่มีประสิทธิภาพสูง  
 
 ถ้าใช่ แสดงว่า UV เป็นเครื่องมือที่เหมาะกับคุณ
 
 ## จุดเด่นของ UV
-1. จัดการได้ทั้ง project, dependencies, package และ virtual environment
-2. สร้างโปรเจกต์ Python พร้อม git repository ได้ในครั้งเดียว
+1. จัดการได้ทั้ง project, packages/dependencies และ virtual environment
+2. สร้าง Python project พร้อม git repository ได้ในครั้งเดียว
 3. เลือกเวอร์ชันของ Python ได้
 4. สร้าง package แล้วส่งขึ้น repo ได้เลย
 5. ติดตั้ง dependencies ได้เร็วขึ้น
@@ -50,12 +54,12 @@ uv self update
 :::
 
 ## เริ่มต้นใช้งาน UV
-สร้าง directory(folder) เพื่อเก็บโปรเจกต์ใหม่ด้วยคำสั่ง
+สร้าง directory/folder เพื่อเก็บโปรเจกต์ใหม่ด้วยคำสั่ง
 ```bash
 mkdir -p hello-world && cd "$_"
 ```
-### สร้างโปรเจกต์ใหม่
-โดยระบุเวอร์ชั่นของ Python ที่ต้องการ พร้อมสร้าง git repository ใน directory ปัจจุบัน
+### สร้าง Python Project
+โดยระบุเวอร์ชั่นของ Python ที่ต้องการ  และ uv จะสร้าง git repository ใน directory ปัจจุบัน
 ```bash
 uv init --python=3.8 .
 ```
@@ -71,13 +75,13 @@ source .venv/bin/activate
 deactivate
 ```
 :::
-## จัดการ Version ของ Python
+## จัดการเวอร์ชันของ Python
 ### แสดงเวอร์ชัน
-ดูว่ามี Python เวอร์ชันไหนที่ติดตั้งอยู่ในเครื่องแล้ว และมีเวอร์ชันที่สามารถติดตั้งได้
+ดูว่ามี Python เวอร์ชันไหนที่ลงไว้ในเครื่องแล้ว และมีเวอร์ชันไหนที่สามารถติดตั้งได้
 ```bash
 uv python list
 ```
-### ลงเฉพาะเวอร์ชันที่ต้องการ
+### ติดตั้งเฉพาะเวอร์ชันที่ต้องการ
 ```bash
 uv python install 3.10 3.11 3.12
 ```
