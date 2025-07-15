@@ -6,7 +6,7 @@ tags: [coding, uv, python, package-manager, project-management, virtualenv, depe
 keywords: [coding, uv, python, package-manager, project-management, virtualenv, dependencies, package]
 ---
 # Unified Python Project and Package Management
-UV เป็นตัวจัดการ packages สำหรับภาษา Python ที่มีประสิทธิภาพสูงกว่า pip โดยรวมเอาความสามารถในการจัดการ projects, packages/dependencies และ virtual environment ไว้ในเครื่องมือเดียว ช่วยให้การจัดการ Python project ง่ายขึ้น 
+UV เป็นเครื่องมือจัดการ packages สำหรับภาษา Python ที่มีประสิทธิภาพสูงกว่าตัวจัดการแบบเดิมอย่าง pip โดยรวมเอาความสามารถในการจัดการ projects, packages/dependencies และ virtual environment ไว้ในเครื่องมือเดียว ช่วยให้การจัดการ Python project ง่ายขึ้น 
 :::tip tl;dr
 ```sh
 curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -93,7 +93,7 @@ uv venv --python=3.9
 :::
 
 ## จัดการ Dependencies
-ติดตั้ง package dependencies ได้ง่ายๆ ด้วยคำสั่ง
+ติดตั้ง package dependencies ได้ง่ายๆ เช่น ต้องการติดตั้ง requests ด้วยคำสั่ง
 ```bash
 uv add requests
 ```
