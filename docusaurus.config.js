@@ -147,6 +147,10 @@ const config = {
         darkTheme: prismThemes.dracula,
       },
     }),
+  themes: ['@docusaurus/theme-mermaid'],
+  markdown: {
+    mermaid: true,
+  },
 };
 
 export default config;
