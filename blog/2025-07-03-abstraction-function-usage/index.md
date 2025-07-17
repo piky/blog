@@ -14,5 +14,5 @@ keywords: [abstraction, function, usage, implement, programming, software-develo
 :::
 
 :::danger เข้าใจหลักการทำงานและวิธีใช้งาน
-เมื่อประยุกต์ใช้เป็น _เครื่องมือทำมาหากิน_ (productive and professional tools)
+เมื่อประยุกต์ใช้เป็น _เครื่องมือทำมาหากิน_ (productivity and professional tools)
 :::
