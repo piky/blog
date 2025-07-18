@@ -18,7 +18,7 @@ uv init --python=3.13 hello-world && cd "$_"
 source .venv/bin/activate
 ```
 :::
-## เหตุผลที่ควรใช้ UV
+## เหตุผลที่ควรใช้ uv
 คุณกำลังปวดหัวกับสิ่งเหล่านี้อยู่ใช่หรือไม่?
 - ต้องจัดการ Python project หลายโปรเจกต์ในเครื่องเดียว แต่ไม่อยากใช้ Docker
 - แต่ละ project ใช้ Python version แตกต่างกัน
