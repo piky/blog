@@ -8,7 +8,7 @@ keywords: [diagram-as-code, diagraming-tool, charting-tool]
 ---
 # 🧱 Visuals You Can Version, Review, and Automate
 :::warning
-This is AI generated content which can make mistake.
+This is AI generated content which can make mistakes.
 :::
 In modern software development, everything is code—from infrastructure (Infrastructure as Code) to security policies. So why not diagrams?  
 
