@@ -1,12 +1,12 @@
 ---
-title: UV Python Package Manager
+title: uv Python Package Manager
 slug: uv-python-package-manager
 authors: [piky]
 tags: [coding, uv, python, package-manager, project-management, virtualenv, dependencies, package]
 keywords: [coding, uv, python, package-manager, project-management, virtualenv, dependencies, package]
 ---
 # Unified Python Project and Package Management
-UV เป็นเครื่องมือจัดการ packages สำหรับภาษา Python ที่มีประสิทธิภาพสูงกว่าตัวจัดการแบบเดิมอย่าง pip โดยรวมเอาความสามารถในการจัดการ projects, packages/dependencies และ virtual environment ไว้ในเครื่องมือเดียว ช่วยให้การจัดการ Python project ง่ายขึ้น 
+uv เป็นเครื่องมือจัดการ packages สำหรับภาษา Python ที่มีประสิทธิภาพสูงกว่าตัวจัดการแบบเดิมอย่าง pip โดยรวมเอาความสามารถในการจัดการ projects, packages/dependencies และ virtual environment ไว้ในเครื่องมือเดียว ช่วยให้การจัดการ Python project ง่ายขึ้น 
 :::tip tl;dr
 ```sh
 curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -26,9 +26,9 @@ source .venv/bin/activate
 - ต้องการติดตั้ง dependencies ได้เร็วขึ้น
 - ต้องการเครื่องมือที่มีประสิทธิภาพสูง  
 
-ถ้าใช่ แสดงว่า UV เป็นเครื่องมือที่เหมาะกับคุณ
+ถ้าใช่ แสดงว่า uv เป็นเครื่องมือที่เหมาะกับคุณ
 
-## จุดเด่นของ UV
+## จุดเด่นของ uv
 1. จัดการได้ทั้ง project, packages/dependencies และ virtual environment
 2. สร้าง Python project พร้อม git repository ได้ในครั้งเดียว
 3. เลือกเวอร์ชันของ Python ได้
@@ -46,14 +46,14 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 ```powershell
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
-:::tip
-หมั่นอัพเดต UV เพื่อให้ได้ฟีเจอร์ใหม่ ปลอดภัย และไร้บั๊ก:
+:::warning Update UV
+เพื่อให้ได้ฟีเจอร์ใหม่ ปลอดภัย และไร้บั๊ก:
 ```bash
 uv self update
 ```
 :::
 
-## เริ่มต้นใช้งาน UV
+## เริ่มต้นใช้งาน uv
 สร้าง directory/folder เพื่อเก็บโปรเจกต์ใหม่ด้วยคำสั่ง
 ```bash
 mkdir -p hello-world && cd "$_"
