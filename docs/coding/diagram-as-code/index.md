@@ -7,6 +7,9 @@ tags: [diagram, mermaid, markdown, javascript-based, github-pages, gitlab-pages]
 keywords: [diagram-as-code, diagraming-tool, charting-tool]
 ---
 # 🧱 Visuals You Can Version, Review, and Automate
+:::warning
+This is AI generated content which can make mistake.
+:::
 In modern software development, everything is code—from infrastructure (Infrastructure as Code) to security policies. So why not diagrams?  
 
 Welcome to the world of Diagram as Code (DaC)—an emerging practice that treats diagrams not as static images, but as living artifacts in your codebase. With tools like Diagrams, PlantUML, and Structurizr DSL, developers can generate architecture, cloud, or system diagrams programmatically.
