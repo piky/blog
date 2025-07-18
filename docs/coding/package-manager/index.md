@@ -18,6 +18,7 @@ $ uv init --python=3.13 hello-world && cd "$_"
 $ source .venv/bin/activate
 ```
 :::
+
 ## เหตุผลที่ควรใช้ uv
 คุณกำลังปวดหัวกับสิ่งเหล่านี้อยู่ใช่หรือไม่?
 - ต้องจัดการ Python project หลายโปรเจกต์ในเครื่องเดียว แต่ไม่อยากใช้ Docker
@@ -59,11 +60,13 @@ $ uv self update
 ```sh
 $ mkdir -p hello-world && cd "$_"
 ```
+
 ### สร้าง Python Project
 โดยระบุเวอร์ชั่นของ Python ที่ต้องการ  และ uv จะสร้าง git repository ใน directory ปัจจุบัน
 ```sh
 $ uv init --python=3.8 .
 ```
+
 ### เปิดใช้ virtualenv 
 ```sh
 $ uv venv --python=3.8
@@ -76,12 +79,14 @@ $ source .venv/bin/activate
 $ deactivate
 ```
 :::
+
 ## จัดการเวอร์ชันของ Python
 ### แสดงเวอร์ชัน
 ดูว่ามี Python เวอร์ชันไหนที่ลงไว้ในเครื่องแล้ว และมีเวอร์ชันไหนที่สามารถติดตั้งได้
 ```sh
 $ uv python list
 ```
+
 ### ติดตั้งเฉพาะเวอร์ชันที่ต้องการ
 ```sh
 $ uv python install 3.10 3.11 3.12
@@ -98,6 +103,7 @@ $ uv venv --python=3.9
 ```sh
 $ uv add requests
 ```
+
 ## รัน Python script
 ### สร้าง script
 ```sh
@@ -135,6 +141,7 @@ Installed 5 packages in 12ms
 :::info
 uv นิยามการทำงานลักษณะนี้ว่า _on-demand virtualenv_ หรือ _short-lived virtualenv_
 :::
+
 ## ใช้งาน Tools ด้วย uvx
 :::info
 Tool เป็น Python package ประเภทหนึ่ง ที่เรียกใช้งานได้ผ่าน CLI
