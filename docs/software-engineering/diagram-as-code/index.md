@@ -2,7 +2,6 @@
 title: Diagram as Code
 slug: diagram-as-code
 description: A guide to creating diagrams using Mermaid.JS
-authors: [piky]
 tags: [diagram, mermaid, markdown, javascript-based, github-pages, gitlab-pages]
 keywords: [diagram-as-code, diagraming-tool, charting-tool]
 ---
