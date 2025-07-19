@@ -1,7 +1,6 @@
 ---
 title: Effective Issue Report
 slug: effective-issue-report
-authors: [piky]
 tags: [bug, issue, incident, feedback, report, monitoring, tracking, observability, helpdesk, support]
 keywords: [bug, issue, incident, feedback, report, monitoring, observability]
 ---
