@@ -7,6 +7,9 @@ last_update:
   date: 7/19/2025
   author: Piky
 ---
+:::warning
+Please note: This content was created by AI and might contain inaccuracies.
+:::
 A cloud-based development environment (aka. CDE) allows developers to write, test, and deploy code using cloud resources.
 This setup eliminates the need for local installations and configurations, enabling developers to work from anywhere with an internet connection.
 
