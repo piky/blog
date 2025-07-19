@@ -1,7 +1,6 @@
 ---
 title: uv Python Package Manager
 slug: uv-python-package-manager
-authors: [piky]
 tags: [coding, uv, python, package-manager, project-management, virtualenv, dependencies, package]
 keywords: [coding, uv, python, package-manager, project-management, virtualenv, dependencies, package]
 last_update:

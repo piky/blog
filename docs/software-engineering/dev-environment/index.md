@@ -36,7 +36,7 @@ It also provides features like real-time collaboration, terminal access, and deb
 It supports multiple programming languages and allows developers to write, run, and share code directly from the browser.
 Replit is particularly useful for quick prototyping and collaborative coding sessions.  
 
-## Glitch
-[Glitch](https://glitch.com/) is a cloud-based development environment that focuses on web development.
-It allows developers to create, remix, and share web applications easily.
-Glitch provides a collaborative coding experience, enabling multiple developers to work on the same project simultaneously. 
+## Coder
+[Coder](https://coder.com/) is a cloud-based development environment that provides a full-featured IDE in the browser.
+It allows developers to create and manage development environments for various programming languages and frameworks.
+Coder focuses on providing a seamless coding experience with features like real-time collaboration, terminal access, and integration with version control systems.
