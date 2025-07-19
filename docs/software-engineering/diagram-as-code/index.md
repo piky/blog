@@ -2,13 +2,12 @@
 title: Diagram as Code
 slug: diagram-as-code
 description: A guide to creating diagrams using Mermaid.JS
-authors: [piky]
 tags: [diagram, mermaid, markdown, javascript-based, github-pages, gitlab-pages]
 keywords: [diagram-as-code, diagraming-tool, charting-tool]
 ---
 # 🧱 Visuals You Can Version, Review, and Automate
 :::warning
-This is AI generated content which can make mistakes.
+Please note: This content was created by AI and might contain inaccuracies.
 :::
 In modern software development, everything is code—from infrastructure (Infrastructure as Code) to security policies. So why not diagrams?  
 
