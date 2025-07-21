@@ -24,7 +24,15 @@ It provides a web-based IDE for building and deploying applications using Fireba
 [GitPod](https://www.gitpod.io/) is a cloud-based development environment that integrates with Git repositories.
 It provides a full-featured IDE in the cloud, allowing developers to start coding immediately without local setup.
 GitPod supports various programming languages and frameworks, making it versatile for different projects.  
- 
+
+## StackBlitz
+[StackBlitz](https://stackblitz.com/) or [Bolt](https://bolt.new/) uses a novel WebContainers technology to run Docusaurus directly in your browser. WebContainer is the first WebAssembly-based micro operating system which boots entire development environments in milliseconds, securely within your browser tab.  
+
+## CodeSandbox
+[CodeSandbox](https://codesandbox.io/) is an online code editor and cloud-based development environment.
+It allows developers to create, share, and collaborate on web applications using a browser-based IDE.
+CodeSandbox supports various frameworks and libraries, making it easy to prototype and build web applications quickly.  
+
 ## AWS Cloud9
 [AWS Cloud9](https://aws.amazon.com/cloud9/) is a cloud-based integrated development environment (IDE) provided by Amazon Web Services.
 It allows developers to write, run, and debug code using a web browser.
@@ -39,4 +47,4 @@ Replit is particularly useful for quick prototyping and collaborative coding ses
 ## Coder
 [Coder](https://coder.com/) is a cloud-based development environment that provides a full-featured IDE in the browser.
 It allows developers to create and manage development environments for various programming languages and frameworks.
-Coder focuses on providing a seamless coding experience with features like real-time collaboration, terminal access, and integration with version control systems.
+Coder focuses on providing a seamless coding experience with features like real-time collaboration, terminal access, and integration with version control systems.  
