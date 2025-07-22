@@ -1,9 +1,9 @@
 ---
-title: Chip War
-slug: chip-war
+title: ทำก่อนได้เปรียบ
+slug: just-do-it
 authors: piky
 tags: [opinion, fyi, note]
-keywords: [chip, semiconductor, technology, science, engineering, innovation]
+keywords: [know-how, how-to, experience, skill, semiconductor, technology, science, engineering, innovation]
 ---
 <iframe width="560" height="315" src="https://www.youtube.com/embed/NlYXqRG7lus?si=zJSbv1fqvNXoeI9d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 :::info หลักการ
@@ -11,5 +11,5 @@ keywords: [chip, semiconductor, technology, science, engineering, innovation]
 :::
 
 :::danger วิธีการ
-หรือ How-to ใครลงมือทำก่อน (Engineering) ย่อมเห็นปัญหาและแนวทางแก้ไขได้ก่อน (Know-how)
+หรือ Know-How ใครลงมือทำ(Engineering)ก่อน ย่อมเห็นปัญหา(challenges)และแนวทางแก้ไข(How-to)ได้ก่อน
 :::
