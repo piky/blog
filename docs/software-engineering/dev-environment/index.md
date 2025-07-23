@@ -1,6 +1,7 @@
 ---
 title: Cloud-based Development Environment
 slug: cloud-based-development-environment
+description: CDE allows developers to write, test, and deploy code using cloud resources
 tags: [cloud-based, development, environment, collaboration, coding, development, environment, setup]
 keywords: [coding, development, environment, setup]
 ---

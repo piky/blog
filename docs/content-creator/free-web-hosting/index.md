@@ -15,9 +15,10 @@ API-first
 web development
 web hosting
 cdn
-markdown
-git
+markdown-based
+git as a single source of truth
 gitops
+github integration
 static site generator
 client-side rendering
 content delivery network
