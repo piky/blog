@@ -6,8 +6,8 @@ tags: [diagram, mermaid, markdown, javascript-based, github-pages, gitlab-pages]
 keywords: [diagram-as-code, diagraming-tool, charting-tool]
 ---
 # 🧱 Visuals You Can Version, Review, and Automate
-:::warning
-Please note: This content was created by AI and might contain inaccuracies.
+:::warning Please note
+This content was created by AI and might contain inaccuracies.
 :::
 In modern software development, everything is code—from infrastructure (Infrastructure as Code) to security policies. So why not diagrams?  
 
