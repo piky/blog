@@ -1,6 +1,6 @@
 ---
 title: Git Best Practices
-description: Merge for safety, rebase for local cleanup.
+description: Merge for safety, Rebase for local cleanup.
 slug: git-best-practices
 tags: [git, merge, rebase, branch, version-control, vcs, source-control, scm]
 keywords: [git, merge, rebase, branch, version-control, vcs, source-control, scm]
@@ -18,7 +18,7 @@ This content was summarized by [NotebookLM](https://notebooklm.google.com/) and 
 
 ### Git merge
 `git merge` รวมสองสาขา (branches) โดยการสร้าง commit ใหม่ที่เชื่อมโยงประวัติการทำงานของทั้งสองสาขาเข้าด้วยกัน ทำให้โครงสร้างการแยกสาขาเดิมยังคงอยู่ แต่ก็อาจทำให้ commit log ดู
-"รก" ขึ้นมาได้ เนื่องจากมี commit merge จำนวนมาก
+"รก" ขึ้นมาได้ เนื่องจากมี merge commit จำนวนมาก
 
 ### Git rebase
 ในทางกลับกัน `git rebase` จะเขียน commit history ใหม่โดยการย้าย commits จากสาขาหนึ่งไปยังอีกสาขาหนึ่ง ทำให้ได้ประวัติการทำงานที่เป็นเส้นตรง (linear) และสะอาดกว่า
