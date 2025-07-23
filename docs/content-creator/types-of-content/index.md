@@ -1,7 +1,7 @@
 ---
 title: Types of Content
 slug: types-of-content
-authors: [piky]
+description: Blog posts, Docs and Pages.
 tags: [content-creator, content-types]
 keywords: [blog, docs, pages, content-creator, content-types]
 ---
