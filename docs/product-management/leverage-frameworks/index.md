@@ -3,6 +3,7 @@ title: Get the most out of Frameworks
 slug: get-the-most-out-of-frameworks
 tags: [project-management, frameworks, software-development, coding, programming, tools]
 keywords: [project-management, frameworks, software-development, coding, programming, tools]
+draft: true
 ---
 _A wise man once said. "True master has leveraged the preferred framework."_
 
