@@ -1,6 +1,9 @@
 ---
 title: Git Best Practices
+description: Merge and Rebase are same same but different.
 slug: git-best-practices
+tags: [git, merge, rebase, branch, version-control, vcs, source-control, scm]
+keywords: [git, merge, rebase, branch, version-control, vcs, source-control, scm]
 ---
 :::warning Please note 
 This content was summarized by [NotebookLM](https://notebooklm.google.com/) and translated into Thai by [Typhoon Translate](https://opentyphoon.ai/blog/th/typhoon-translate-release). Therefore it may contain inaccuracies.
