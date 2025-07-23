@@ -1,7 +1,8 @@
 ---
 title: Background Removal
-description: วิธีลบพื้นหลังภาพถ่ายด้วยเครื่องมือออนไลน์
+description: ลบพื้นหลังภาพถ่ายด้วย Adobe Express
 keywords: [background-removal, image-editing, adobe-express, canva]
+tags: [background-removal, image-editing, adobe-express, canva]
 ---
 # Background Removal using Adobe Express
 เนื่องจากฟีเจอร์ลบแบ็คกราวนด์ภาพ(Background Remover)ใน Canva เวอร์ชั่นฟรี นั้นจำกัดให้ดาวน์โหลดแบบแบ็คกราวน์โป่รงใส่ได้แค่ครั้งเดียว  
