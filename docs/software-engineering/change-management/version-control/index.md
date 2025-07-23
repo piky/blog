@@ -1,6 +1,6 @@
 ---
 title: Git Best Practices
-description: Merge and Rebase are same same but different.
+description: Merge for safety, rebase for local cleanup.
 slug: git-best-practices
 tags: [git, merge, rebase, branch, version-control, vcs, source-control, scm]
 keywords: [git, merge, rebase, branch, version-control, vcs, source-control, scm]
