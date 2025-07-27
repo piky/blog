@@ -1,6 +1,12 @@
 ---
-title: Choosing the Right Process
+title: Choosing the Right Framework
+slug: choosing-the-right-framework
+description: Framework help in delivery fast, quality, and secure.
+tags: [delivery, waterfall, agile, scrum, process, framework, product-management, project-management]
+keywords: [delivery, waterfall, agile, scrum, process, framework, product-management, project-management]
 ---
+_A wise man once said. "True master has leveraged the preferred framework."_  
+เข้าใจและใช้ framework ที่เหมาะสมกับงานที่ทำ จะช่วยให้เราสามารถพัฒนาระบบได้อย่างรวดเร็ว มีประสิทธิภาพ แช็งแรง มั่นคง ปลอดภัยมากขึ้น
 ![Agile vs Waterfall](https://pub-44a464d4394a43d6834ffdc08038cb38.r2.dev/docs/agile-scrum-cmmi.png)
 ## Agile
 เหมาะกับการสร้าง **product** ใหม่ที่มีความไม่แน่นอนและคาดว่าจะมีการเปลี่ยนแปลงบ่อย
