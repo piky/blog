@@ -15,13 +15,11 @@ This content was summarized by [NotebookLM](https://notebooklm.google.com/) and 
 :::
 
 [ByteMonk](https://www.youtube.com/@ByteMonk) อธิบายความแตกต่างพื้นฐานระหว่าง `git merge` และ `git rebase` ซึ่งเป็นสองวิธีที่ใช้กันทั่วไปในการรวมการเปลี่ยนแปลงซอร์สโค้ดในระบบควบคุมเวอร์ชัน
-
 ### Git merge
 `git merge` รวมสองสาขา (branches) โดยการสร้าง commit ใหม่ที่เชื่อมโยงประวัติการทำงานของทั้งสองสาขาเข้าด้วยกัน ทำให้โครงสร้างการแยกสาขาเดิมยังคงอยู่ แต่ก็อาจทำให้ commit log ดู
 "รก" ขึ้นมาได้ เนื่องจากมี merge commit จำนวนมาก
-
 ### Git rebase
-ในทางกลับกัน `git rebase` จะเขียน commit history ใหม่โดยการย้าย commits จากสาขาหนึ่งไปยังอีกสาขาหนึ่ง ทำให้ได้ประวัติการทำงานที่เป็นเส้นตรง (linear) และสะอาดกว่า
+ในทางกลับกัน `git rebase` จะเขียนระวัติการทำงาน(commit history) ใหม่โดยการย้าย commits จากสาขาหนึ่งไปยังอีกสาขาหนึ่ง ทำให้ได้ประวัติการทำงานที่เป็นเส้นตรง (linear) และสะอาดกว่า
 แต่ควรใช้กับสาขาที่แชร์ร่วมกันอย่างระมัดระวัง เนื่องจากจะเปลี่ยน commit ID ของ commits ที่มีอยู่แล้ว
 :::tip ดูประวัติการทำงาน
 ```sh
@@ -38,7 +36,7 @@ $ git rebase origin/main
 ```
 
 :::tip
-ใช้คำสั่ง `git pull --rebase` เพื่อดึงการเปลี่ยนแปลงจาก remote repository โดยไม่สร้าง commit merge ใหม่ เช่น:
+ใช้คำสั่ง `git pull --rebase` เพื่อดึงการเปลี่ยนแปลงจาก remote repository ลงมายัง local โดยไม่สร้าง commit merge ใหม่ เช่น:
 ```sh
 $ git pull --rebase origin main
 ```
