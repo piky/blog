@@ -106,6 +106,16 @@ $ uv venv --python=3.9
 $ uv add requests
 ```
 
+## ใช้ pip-compatible interface
+หรือถ้ายังคุ้นเคยกับการใช้ pip หรือโปรเจกต์เดิม workflow ยังพึ่ง pip อยู่  
+uv ก็มี pip-interface ที่ทำงานได้ไวกว่า pip ธรรมดาถึง 10-100 เท่า
+```sh
+$ uv pip install langchain
+Resolved 29 packages in 762ms
+Prepared 14 packages in 1.03s
+Installed 29 packages in 258ms
+```
+
 ## รัน Python script
 ### สร้าง script
 ```sh
