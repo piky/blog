@@ -106,6 +106,12 @@ $ uv venv --python=3.9
 $ uv add requests
 ```
 
+### ย้าย reuirements.txt ไปยัง pyproject.toml
+ถ้าโปรเจกต์มีไฟล์ `requirements.txt` อยู่แล้ว สามารถย้าย deps ทั้งหมดไปยัง `pyproject.toml` ได้ด้วยคำสั่ง
+```sh
+$ uv add -r requirements.txt
+```
+
 ## ใช้ pip-compatible interface
 หรือถ้ายังคุ้นเคยกับการใช้ pip หรือโปรเจกต์เดิม workflow ยังพึ่ง pip อยู่  
 uv ก็มี pip-interface ที่ทำงานได้ไวกว่า pip ธรรมดาถึง 10-100 เท่า
