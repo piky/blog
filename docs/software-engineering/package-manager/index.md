@@ -105,14 +105,7 @@ $ uv venv --python=3.9
 ```sh
 $ uv add requests
 ```
-
-### ย้าย reuirements.txt ไปยัง pyproject.toml
-ถ้าโปรเจกต์มีไฟล์ `requirements.txt` อยู่แล้ว สามารถย้าย deps ทั้งหมดไปยัง `pyproject.toml` ได้ด้วยคำสั่ง
-```sh
-$ uv add -r requirements.txt
-```
-
-## ใช้ pip-compatible interface
+### ใช้ pip-compatible interface
 หรือถ้ายังคุ้นเคยกับการใช้ pip หรือโปรเจกต์เดิม workflow ยังพึ่ง pip อยู่  
 uv ก็มี pip-interface ที่ทำงานได้ไวกว่า pip ธรรมดาถึง 10-100 เท่า
 ```sh
@@ -121,6 +114,26 @@ Resolved 29 packages in 762ms
 Prepared 14 packages in 1.03s
 Installed 29 packages in 258ms
 ```
+### ย้าย requirements.txt ไปยัง pyproject.toml
+:::info อย่าลืม Initialize project ก่อน
+สร้างไฟล์ `pyproject.toml` ด้วยคำสั่ง
+```sh
+$ uv init --python=3.12 .
+```
+:::
+ถ้าโปรเจกต์มีไฟล์ `requirements.txt` อยู่แล้ว สามารถย้าย deps ทั้งหมดไปยัง `pyproject.toml` ได้ด้วยคำสั่ง
+```sh
+$ uv add -r requirements.txt
+```
+เสร็จแล้วก็ติดตั้ง deps ทั้งหมดที่ระบุไว้ใน `pyproject.toml` ด้วยคำสั่ง
+```sh
+$ uv sync
+```
+:::tip วิธีเก็บ dependencies
+```sh
+$ uv pip freeze > requirements.txt
+```
+:::
 
 ## รัน Python script
 ### สร้าง script
