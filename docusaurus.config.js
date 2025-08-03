@@ -157,6 +157,13 @@ const config = {
   markdown: {
     mermaid: true,
   },
+  // Make sure this scripts section is present and contains the Google CSE script
+  scripts: [
+    {
+      src: 'https://cse.google.com/cse.js?cx=25c2cc365ecee479d',
+      async: true,
+    },
+  ],
 };
 
 export default config;
