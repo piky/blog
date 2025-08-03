@@ -1,24 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import SearchBar from '@theme-original/SearchBar';
 
-export default function SearchBarWrapper() {
-  useEffect(() => {
-    // Wait for Google Custom Search script to load
-    const interval = setInterval(() => {
-      if (window.google) {
-        clearInterval(interval);
-      }
-    }, 100);
-
-    return () => clearInterval(interval);
-  }, []);
-
+export default function SearchBarWrapper(props) {
   return (
-    <div 
-      className="gcse-search" 
-      style={{
-        width: '300px',
-        marginRight: '10px'
-      }}
-    />
+    <>
+      <SearchBar {...props} />
+    </>
   );
 }
