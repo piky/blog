@@ -1,7 +1,7 @@
 ---
 title: GitHub Codespace and DevContainer
 slug: github-codespace-and-devcontainer
-description:
+description: When to use Codespace and DevContainer
 tags: [github, codespace, devcontainer, docker]
 keywords: [github, codespace, devcontainer, docker]
 ---
