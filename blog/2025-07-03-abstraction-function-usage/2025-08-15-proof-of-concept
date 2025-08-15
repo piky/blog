@@ -5,6 +5,6 @@ authors: piky
 tags: [opinion, fyi, note]
 keywords: [poc, proof-of-concept, system-integration]
 ---
-Proof-of-Concept นี่ไม่ต่างอะไรกับการ R&D เลยแฮะ
+Proof-of-Concept ก็คือการทำ R&D อย่างหนึ่ง
 ต้องมีเวลา ลองผิด ลองถูก ค้นคว้า ลงมือ หาข้อจำกัด(caveat/limitation)
 ว่า final outcome ตรงกับ goal หรือเปล่า?

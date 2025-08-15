@@ -1,9 +1,9 @@
 ---
-title: GitHub Codespace and DevContainers
-slug:
+title: GitHub Codespace and DevContainer
+slug: github-codespace-and-devcontainer
 description:
-tags: []
-keywords: []
+tags: [github, codespace, devcontainer, docker]
+keywords: [github, codespace, devcontainer, docker]
 ---
 ## ทำไมต้องใช้
 - เครื่องเก่า สเปกไม่แรง จนแทบไม่อยากลง/เปิด IDE (เช่น VSCode, NeoVim)
