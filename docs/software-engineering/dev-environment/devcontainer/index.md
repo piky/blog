@@ -2,6 +2,7 @@
 title: GitHub Codespace and DevContainer
 slug: github-codespace-and-devcontainer
 description: When to use Codespace and DevContainer
+sidebar_position: 2
 tags: [github, codespace, devcontainer, docker]
 keywords: [github, codespace, devcontainer, docker]
 ---
@@ -16,7 +17,9 @@ keywords: [github, codespace, devcontainer, docker]
 - ทีมเจอปัญหา "It works on my machine."
 
 ## feature
-- เอา repo ไปรันใน GitHub Codespace ก็ได้ หรือเครื่องที่มี Docker
-- มี Image ให้เลือกหลากหลาย tech stack ที่เป็นที่นิยม
-- ปรับแต่ง feature เพิ่มความสามารถได้ด้วย
-- ทำ System Integration/Continuous Integration
+- เอา repo ไปรันใน GitHub Codespace ก็ได้ หรือเครื่อง Laptop/PC ขอแค่มี Docker
+- มี Image มาตรฐานให้เลือกหลากหลาย
+- มี community features ที่รองรับ tech stack ยอดฮิต
+- Bring-Your-Own-Dockerfile หรือ Bring-Your-Own-Compose ก็ได้ถ้ายังไม่ถูกใจ
+- ทำ System Integration/Continuous Integration ได้ด้วย Docker Compose Watch
+- ต่อกับ CloudFlare Tunnel ออกอินเตอร์เน็ตไว้โชว์ลูกค้าก็ได้
