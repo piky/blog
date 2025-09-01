@@ -67,15 +67,19 @@ flowchart TD
     fe_app -->|context + prompt| openai
 ```
 :::
-## How-to setup
-All of works are defined as a Docker compose.yaml in [this repository](https://github.com/piky/open-webui). What you need to do is just:
+## How-to Setup
+Please use Docker compose.yaml in [this repository](https://github.com/piky/open-webui). What you need to do is just:
+`TUNNEL_TOKEN` and `PUBLIC_HOSTNAME` can be found at Cloudflare Zero Trust Network. If not present then create a new tunnel.
+
 ### Option 1:
-Fork the repo and set required Codespace secrets environment varibales
+Fork [the repo](https://github.com/piky/open-webui) and set required Codespace secrets environment varibales to match `TUNNEL_TOKEN` and `PUBLIC_HOSTNAME`:
 
 ### Option 2: 
 Clone the repo locally then run:
 ```sh
 $ git clone https://github.com/piky/open-webui.git
 $ cd open-webui
+$ export TUNNEL_TOKEN=<cloudlfare-tunnle-token>
+$ export PUBLIC_HOSTNAME=<subdomain.your-domain.com>
 $ docker compose up -d
 ```
