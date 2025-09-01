@@ -12,22 +12,27 @@ Let's say you are pitching an AI application to VCs for raising funds. Instead o
 ```mermaid
 flowchart TD
     %% External actors
-    subgraph Public
-        user["fa:fa-user Prompt Engineer\n(web browser)"]
-            subgraph OpenAI
-                openai["LLM API Endpoints"]
-            end
+    subgraph Public Internet
+
+        %% Cloudflare side
+        subgraph CloudflareEdge
+            cf["Cloudflare Zero Trust"]
+        end
+
+        subgraph OpenAI
+            openai["LLM API Endpoints"]
+        end
     end
 
-    %% Cloudflare side
-    subgraph CloudflareEdge
-        cf["Cloudflare Zero Trust"]
+    %% End-users
+    subgraph User
+        user["fa:fa-user Prompt Engineer\n(web browser)"]
     end
 
     %% Corporate network behind firewall
-    subgraph Docker
+    subgraph Codespace or DevContainer
 
-        subgraph Bridge Network
+        subgraph Docker Bridge Network
 
             subgraph routing
                 firewall["Cloudflared"]
@@ -42,8 +47,9 @@ flowchart TD
                 rag_web["Web Search Retrieval"]
                 rag_doc["Document Store Retrieval"]
             end
+
             subgraph Ollama
-                ollama["LLMs API Endpoints"]
+                ollama["LLM API Endpoints"]
             end
         end
     end
@@ -54,9 +60,11 @@ flowchart TD
     firewall -->|HTTPS| caddy
     caddy --> fe_app
 
-    fe_app --> rag_web
-    fe_app --> rag_doc
-    fe_app -.->|context + prompt| ollama
+    fe_app -.-> rag_web
+    fe_app -.-> rag_doc
+    fe_app -->|context + prompt| ollama
 
-    fe_app -.->|context + prompt| openai
+    fe_app -->|context + prompt| openai
 ```
+:::
+## How-to setup
