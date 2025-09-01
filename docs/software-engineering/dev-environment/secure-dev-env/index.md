@@ -13,15 +13,20 @@ Let's say you are pitching an AI application to VCs for raising funds. Instead o
 flowchart TD
     %% External actors
     subgraph Public
-        user["fa:fa-user Prompt Engineer\n(web browser)"]
-            subgraph OpenAI
-                openai["LLM API Endpoints"]
-            end
+
+        %% Cloudflare side
+        subgraph CloudflareEdge
+            cf["Cloudflare Zero Trust"]
+        end
+
+        subgraph OpenAI
+            openai["LLM API Endpoints"]
+        end
     end
 
-    %% Cloudflare side
-    subgraph CloudflareEdge
-        cf["Cloudflare Zero Trust"]
+    %% End-users
+    subgraph User
+        user["fa:fa-user Prompt Engineer\n(web browser)"]
     end
 
     %% Corporate network behind firewall
@@ -42,7 +47,7 @@ flowchart TD
                 rag_web["Web Search Retrieval"]
                 rag_doc["Document Store Retrieval"]
             end
-            
+
             subgraph Ollama
                 ollama["LLM API Endpoints"]
             end
@@ -55,9 +60,11 @@ flowchart TD
     firewall -->|HTTPS| caddy
     caddy --> fe_app
 
-    fe_app --> rag_web
-    fe_app --> rag_doc
-    fe_app -.->|context + prompt| ollama
+    fe_app -.-> rag_web
+    fe_app -.-> rag_doc
+    fe_app -->|context + prompt| ollama
 
-    fe_app -.->|context + prompt| openai
+    fe_app -->|context + prompt| openai
 ```
+:::
+## How-to setup
