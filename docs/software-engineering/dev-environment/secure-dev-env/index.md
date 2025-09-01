@@ -68,7 +68,7 @@ flowchart TD
 ```
 :::
 ## How-to setup
-All of works are defined as a Docker compose.yaml in this repository. What you need to do is just:
+All of works are defined as a Docker compose.yaml in [this repository](https://github.com/piky/open-webui). What you need to do is just:
 ### Option 1:
 Fork the repo and set required Codespace secrets environment varibales
 
