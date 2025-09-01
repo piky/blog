@@ -1,13 +1,90 @@
 ---
-title: Develop and Deploy Cloud Native Applications with Kind
+title: Develop and Deploy Cloud Native Applications with KinD
 slug: develop-and-deploy-cloud-native-applications-with-kind
-description: Create a multi-nodes Kubernetes cluster with Kind
+description: Create a multi-nodes Kubernetes cluster with KinD
 sidebar_position: 4
-tags: [kind, kubernetes, k8s, docker, container, container-runtime, cloud-native, application, cncf, development, paas]
-keywords: [kind, kubernetes, k8s, docker, container, container-runtime, cloud-native, application, cncf, development, paas]
+tags: [kind, kubernetes, k8s, cluster, docker, container, container-runtime, cloud-native, application, cncf, development, paas]
+keywords: [kind, kubernetes, k8s, cluster, docker, container, container-runtime, cloud-native, application, cncf, development, paas]
 ---
 :::tip tl;dr
 ```sh
-    $ kind create cluster
+$ go install sigs.k8s.io/kind@v0.30.0 && time kind create cluster
 ```
 :::
+# Kubernetes IN Docker - local clusters for testing Kubernetes
+[kind](https://kind.sigs.k8s.io/) - Kubernetes in Docker, is a tool for running local Kubernetes clusters using Docker container “nodes”.
+kind was primarily designed for testing Kubernetes itself, but may be used for local development or CI.  
+## Features
+- Spin up, tear down and rebuild clusters in seconds—literally.
+- Runs with limited compute resources : a single CPU core and 1 GB of RAM is already enough.
+- supports multi-node (including HA) clusters; of course, more nodes need more resources.
+- Pick whichever Kubernetes version you’d like to test.
+- Built-in Load Balancer, Ingress, and Gateway API.
+- Supports Linux, macOS and Windows  
+## Pre-requisite
+**Required** : Installed [Docker](/blog/docker-quick-install)  
+**Optional** : Installed kubectl and Helm CLI
+
+## Install KinD
+Follow the instructions of KinD [official GitHub Repo](https://github.com/kubernetes-sigs/kind) or [Quick Start guide](https://kind.sigs.k8s.io/docs/user/quick-start/) for platform specific.
+
+## Create a single node cluster with specific Kubernetes version
+```sh
+$ kind create cluster --image kindest/node:v1.33.4
+```
+
+## The most effective usage of KinD
+Use a configuration file for advanced scenarios: For more complex configurations, such as multi-node clusters or custom networking, you can define the image in a YAML configuration file.
+
+### Create multi-nodes Cluster
+```yaml title=kind-config.yaml
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+    image: kindest/node:v1.34
+- role: worker
+    image: kindest/node:v1.34
+- role: worker
+    image: kindest/node:v1.34
+- role: worker
+    image: kindest/node:v1.34
+```
+
+Then create cluster with kind command:
+```sh
+$ kind create cluster --config kind-config.yaml
+```
+
+### Create a multi-node HA cluster with Cilium CNI
+```yaml title=kind-no-proxy-config.yaml
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+- role: control-plane
+- role: worker
+- role: worker
+- role: worker
+networking:
+disableDefaultCNI: true
+kubeProxyMode: none
+```
+Create cluster with the config file:
+```sh
+$ kind create cluster --config kind-no-proxy-config.yaml
+```
+
+Install Cilium CNI using Helm
+```sh
+ $ helm install cilium cilium/cilium \
+  --namespace kube-system \
+  --set=ipam.mode=kubernetes \
+  --set=kubeProxyReplacement=true \
+  --set=securityContext.capabilities.ciliumAgent="{CHOWN,KILL,NET_ADMIN,NET_RAW,IPC_LOCK,SYS_ADMIN,SYS_RESOURCE,DAC_OVERRIDE,FOWNER,SETGID,SETUID}" \
+  --set=securityContext.capabilities.cleanCiliumState="{NET_ADMIN,SYS_ADMIN,SYS_RESOURCE}" \
+  --set=cgroup.autoMount.enabled=false \
+  --set=cgroup.hostRoot=/sys/fs/cgroup \
+  --set=k8sServiceHost=localhost \
+  --set=k8sServicePort=7445
+```
