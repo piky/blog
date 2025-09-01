@@ -6,12 +6,12 @@ sidebar_position: 4
 tags: [kind, kubernetes, k8s, cluster, docker, container, container-runtime, cloud-native, application, cncf, development, paas]
 keywords: [kind, kubernetes, k8s, cluster, docker, container, container-runtime, cloud-native, application, cncf, development, paas]
 ---
+# Kubernetes IN Docker - local clusters for testing Kubernetes
 :::tip tl;dr
 ```sh
 $ go install sigs.k8s.io/kind@v0.30.0 && time kind create cluster
 ```
 :::
-# Kubernetes IN Docker - local clusters for testing Kubernetes
 [kind](https://kind.sigs.k8s.io/) - Kubernetes in Docker, is a tool for running local Kubernetes clusters using Docker container “nodes”.
 kind was primarily designed for testing Kubernetes itself, but may be used for local development or CI.  
 ## Features
