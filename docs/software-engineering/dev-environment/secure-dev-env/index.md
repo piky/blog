@@ -12,7 +12,7 @@ Let's say you are pitching an AI application to VCs for raising funds. Instead o
 ```mermaid
 flowchart TD
     %% External actors
-    subgraph Public
+    subgraph Public Internet
 
         %% Cloudflare side
         subgraph CloudflareEdge
