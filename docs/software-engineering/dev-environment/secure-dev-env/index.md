@@ -68,3 +68,14 @@ flowchart TD
 ```
 :::
 ## How-to setup
+All of works are defined as a Docker compose.yaml in this repository. What you need to do is just:
+### Option 1:
+Fork the repo and set required Codespace secrets environment varibales
+
+### Option 2: 
+Clone the repo locally then run:
+```sh
+$ git clone https://github.com/piky/open-webui.git
+$ cd open-webui
+$ docker compose up -d
+```
