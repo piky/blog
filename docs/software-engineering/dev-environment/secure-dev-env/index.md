@@ -1,6 +1,6 @@
 ---
-title: Simplify and Secure API Endpoints Using Caddy and CloudFlare Tunnels
-slug: simplify-and-secure-api-endpoint-using-caddy-and-cloudflare-tunnels
+title: Simplify Privacy Using Caddy and CloudFlare Tunnels
+slug: simplify-privacy-using-caddy-and-cloudflare-tunnels
 description: Secure API endpoints with Caddy and Cloudflare Tunnels
 sidebar_position: 3
 tags: [https, api, endpoint, cloudflare, tunnels, zero-trust, network, caddy, reverse-proxy]
@@ -68,13 +68,13 @@ flowchart TD
 ```
 :::
 ## How-to Setup
-Please use Docker compose.yaml in [this repository](https://github.com/piky/open-webui). What you need to do is just:
-`TUNNEL_TOKEN` and `PUBLIC_HOSTNAME` can be found at Cloudflare Zero Trust Network. If not present then create a new tunnel.
+For the sake of simplicity, please use Docker compose.yaml provided by [this repository](https://github.com/piky/open-webui).  
+`TUNNEL_TOKEN` and `PUBLIC_HOSTNAME` can be found at Cloudflare Zero Trust Networks. If not present then create a new tunnel.
 
-### Option 1:
+### Option 1: (Recommended) GitHub Codespace
 Fork [the repo](https://github.com/piky/open-webui) and set required Codespace secrets environment varibales to match `TUNNEL_TOKEN` and `PUBLIC_HOSTNAME`:
 
-### Option 2: 
+### Option 2: Local DevContainer
 Clone the repo locally then run:
 ```sh
 $ git clone https://github.com/piky/open-webui.git
