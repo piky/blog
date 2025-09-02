@@ -32,7 +32,7 @@ kind was primarily designed for testing Kubernetes itself, but may be used for l
 Follow the instructions of KinD [official GitHub Repo](https://github.com/kubernetes-sigs/kind) or [Quick Start guide](https://kind.sigs.k8s.io/docs/user/quick-start/) for platform specific.
 :::info MacOS
 ```sh
-brew install kind
+$ brew install kind
 ```
 :::
 
@@ -53,7 +53,7 @@ $ kind create cluster --image kindest/node:v1.33.4
 Use a configuration file for advanced scenarios: For more complex configurations, such as multi-node clusters or custom networking, you can define the image in a YAML configuration file.
 
 ### Create multi-nodes Cluster
-```yaml title=kind-config.yaml
+```yaml title="kind-config.yaml"
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 nodes:
@@ -66,14 +66,13 @@ nodes:
 - role: worker
     image: kindest/node:v1.34
 ```
-
-Then create cluster with kind command:
+Now you're all set to create cluster :
 ```sh
 $ kind create cluster --config kind-config.yaml
 ```
 
 ### Create a multi-node HA cluster with Cilium CNI
-```yaml title=kind-no-proxy-config.yaml
+```yaml title="kind-no-proxy-config.yaml"
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 nodes:
@@ -86,7 +85,7 @@ networking:
 disableDefaultCNI: true
 kubeProxyMode: none
 ```
-Create cluster with the config file:
+Then create an HA cluster without kube-proxy:
 ```sh
 $ kind create cluster --config kind-no-proxy-config.yaml
 ```
