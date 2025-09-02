@@ -27,6 +27,19 @@ kind was primarily designed for testing Kubernetes itself, but may be used for l
 
 ## Install KinD
 Follow the instructions of KinD [official GitHub Repo](https://github.com/kubernetes-sigs/kind) or [Quick Start guide](https://kind.sigs.k8s.io/docs/user/quick-start/) for platform specific.
+:::info MacOS
+```sh
+brew install kind
+```
+:::
+
+:::tip Linux AMD64 / x86_64
+```sh
+$ [ $(uname -m) = x86_64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.30.0/kind-$(uname)-amd64
+$ chmod +x ./kind
+$ sudo mv ./kind /usr/local/bin/kind
+```
+:::
 
 ## Create a single node cluster with specific Kubernetes version
 ```sh
