@@ -25,8 +25,8 @@ kind was primarily designed for testing Kubernetes itself, but may be used for l
 
 ## Pre-requisite
 **Required** : Installing [Docker](/blog/docker-quick-install)  
-**Required** : Installing [kubectl](https://kubernetes.io/docs/tasks/tools/) and 
-**Optional** : Installing [Helm CLI](https://helm.sh/docs/intro/install/)
+**Required** : Installing [kubectl](https://kubernetes.io/docs/tasks/tools/) and  
+**Recommended** : Installing [Helm CLI](https://helm.sh/docs/intro/install/)
 
 ## Install KinD
 Follow the instructions of KinD [official GitHub Repo](https://github.com/kubernetes-sigs/kind) or [Quick Start guide](https://kind.sigs.k8s.io/docs/user/quick-start/) for platform specific.
