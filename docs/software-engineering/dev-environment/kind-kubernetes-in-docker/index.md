@@ -14,6 +14,7 @@ $ go install sigs.k8s.io/kind@v0.30.0 && time kind create cluster
 :::
 [kind](https://kind.sigs.k8s.io/) - Kubernetes in Docker, is a tool for running local Kubernetes clusters using Docker container “nodes”.
 kind was primarily designed for testing Kubernetes itself, but may be used for local development or CI.  
+
 ## Features
 - Spin up, tear down and rebuild clusters in seconds—literally.
 - Runs with limited compute resources : a single CPU core and 1 GB of RAM is already enough.
@@ -21,12 +22,27 @@ kind was primarily designed for testing Kubernetes itself, but may be used for l
 - Pick whichever Kubernetes version you’d like to test.
 - Built-in Load Balancer, Ingress, and Gateway API.
 - Supports Linux, macOS and Windows  
+
 ## Pre-requisite
-**Required** : Installed [Docker](/blog/docker-quick-install)  
-**Optional** : Installed kubectl and Helm CLI
+**Required** : Installing [Docker](/blog/docker-quick-install)  
+**Required** : Installing [kubectl](https://kubernetes.io/docs/tasks/tools/) and 
+**Optional** : Installing [Helm CLI](https://helm.sh/docs/intro/install/)
 
 ## Install KinD
 Follow the instructions of KinD [official GitHub Repo](https://github.com/kubernetes-sigs/kind) or [Quick Start guide](https://kind.sigs.k8s.io/docs/user/quick-start/) for platform specific.
+:::info MacOS
+```sh
+brew install kind
+```
+:::
+
+:::tip Linux AMD64 / x86_64
+```sh
+$ [ $(uname -m) = x86_64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.30.0/kind-$(uname)-amd64
+$ chmod +x ./kind
+$ sudo mv ./kind /usr/local/bin/kind
+```
+:::
 
 ## Create a single node cluster with specific Kubernetes version
 ```sh
