@@ -52,8 +52,21 @@ $ kind create cluster --image kindest/node:v1.33.4
 ## The most effective usage of KinD
 Use a configuration file for advanced scenarios: For more complex configurations, such as multi-node clusters or custom networking, you can define the image in a YAML configuration file.
 
-### Create multi-nodes Cluster
+### Create a cluster with standard Kubernetes API server address and port
 ```yaml title="kind-config.yaml"
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+networking:
+  apiServerAddress: "0.0.0.0" # Binds to all interfaces
+  apiServerPort: 6443 # Default Kubernetes API port
+```
+Save file and issue command. 
+```sh
+$ kind create cluster --config kind-config.yaml
+```
+
+### Create multi-nodes cluster
+```yaml title="kind-multi-nodes-config.yaml"
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 nodes:
@@ -68,7 +81,7 @@ nodes:
 ```
 Now you're all set to create cluster :
 ```sh
-$ kind create cluster --config kind-config.yaml
+$ kind create cluster --config kind-multi-nodes-config.yaml
 ```
 
 ### Create a multi-node HA cluster with Cilium CNI
