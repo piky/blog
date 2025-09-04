@@ -3,8 +3,8 @@ title: Cloud Foundry Korifi
 slug: cloud-foundry-korifi
 description: Code and Push
 authors: piky
-tags: [devops, cloud, cloud-native, container, kubernetes, iac, gitops, platform-engineering, software-engineering]
-keywords: [devops, cloud, foundry, korifi, cloud-native, container, kubernetes, gitops, platform-engineerin]
+tags: [devops, cloud, cloud-native, container, kubernetes, platform-engineering, software-engineering]
+keywords: [devops, cloud, foundry, korifi, cloud-native, container, kubernetes, platform-engineerin]
 ---  
 [Cloud Foundry](https://www.cloudfoundry.org/) เดิมทีเป็น self-service internal developer platform(IDP) framework  
 ไว้จัดการ workloads ที่เป็น virtual machines (VM) ยอมรับเลยว่าแนวคิดดีมาก นักพัฒนาโฟกัสแค่โค้ด (application-centric) ที่เหลือโยนงาน software packaging และงาน deploy ออกไปให้มัน  
