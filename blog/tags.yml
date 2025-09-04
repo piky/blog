@@ -57,7 +57,10 @@ opinion:
   label: Opinion
   permalink: /opinions
   description: Personal opinion on various topics
-
+software-engineering:
+  label: Software Engineering
+  permalink: /software-engineering
+  description: Delivery business value with quick and quality.
 platform-engineering:
   label: Platform Engineering
   permalink: /platform-engineering
