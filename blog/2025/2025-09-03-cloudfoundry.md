@@ -6,7 +6,7 @@ authors: piky
 tags: [devops, cloud, cloud-native, container, kubernetes, iac, gitops, platform-engineering, software-engineering]
 keywords: [devops, cloud, foundry, korifi, cloud-native, container, kubernetes, gitops, platform-engineerin]
 ---  
-[Cloud Foundry](https://www.cloudfoundry.org/) เป็น self-service internal developer platform(IDP) framework ไว้จัดการ workloads ใน virtual machines (VM)  
+[Cloud Foundry](https://www.cloudfoundry.org/) เดิมทีเป็น self-service internal developer platform(IDP) framework ไว้จัดการ workloads ใน virtual machines (VM)  
 ยอมรับเลยว่าแนวคิดดีมาก โฟกัสแค่เฉพาะโค้ด (application-centric) โดยโยนงาน software packaging ออกไปให้มัน ของดีที่สร้าง ecosystem ไม่ได้ พันธมิตรค่อยๆหายไปทีละราย  
 ส่วน [Korifi](https://github.com/cloudfoundry/korifi) เป็นโปรเจกต์ลูกที่ปรับปรุงเพื่อจัดการ workloads ที่ใน Kubernetes API 
 <!-- truncate -->
