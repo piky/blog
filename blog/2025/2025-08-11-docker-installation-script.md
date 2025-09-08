@@ -5,7 +5,7 @@ authors: piky
 tags: [opinion, fyi, note]
 keywords: [docker]
 ---
-Docker is the most popular container platform. Here is simple step for installation on Linux.
+The purpose of [the install script](https://github.com/docker/docker-install) is for a convenience for quickly installing the latest Docker-CE releases on the supported linux distros. It is not recommended to depend on this script for deployment to production systems.
 ```sh
 $ curl -fsSL https://get.docker.com | sh
 $ sudo usermod -aG docker $USER && newgrp docker
