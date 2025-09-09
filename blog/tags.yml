@@ -53,30 +53,32 @@ gitops:
   permalink: /gitops
   description: Pull-based deployment using git repo as the single source of truth
 
-opinion:
-  label: Opinion
-  permalink: /opinions
-  description: Personal opinion on various topics
 software-engineering:
   label: Software Engineering
   permalink: /software-engineering
-  description: Delivery business value with quick and quality.
+  description: Delivery business value with quick and quality
+
 platform-engineering:
   label: Platform Engineering
   permalink: /platform-engineering
   description: Developer experience with policy first
-
-public-policy:
-  label: Public Policy
-  permalink: /public-policy
-  description: Public policy and governance
 
 fyi:
   label: FYI
   permalink: /fyis
   description: For Your Information
 
+opinion:
+  label: Opinion
+  permalink: /opinions
+  description: Personal opinion on various topics
+
 note:
   label: Note
   permalink: /notes
   description: Personal notes and reminders
+
+public-policy:
+  label: Public Policy
+  permalink: /public-policy
+  description: Public policy and governance
