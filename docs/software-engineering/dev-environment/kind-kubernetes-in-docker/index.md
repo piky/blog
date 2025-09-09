@@ -20,8 +20,8 @@ kind was primarily designed for testing Kubernetes itself, but may be used for l
 - Runs with limited compute resources : a single CPU core and 1 GB of RAM is already enough.
 - supports multi-node (including HA) clusters; of course, more nodes need more resources.
 - Pick whichever Kubernetes version you’d like to test.
-- Built-in Load Balancer, Ingress, and Gateway API.
-- Supports Linux, macOS and Windows  
+- Built-in [Load Balancer: Cloud Provider KIND](https://github.com/kubernetes-sigs/cloud-provider-kind), Ingress, and [Gateway API](https://gateway-api.sigs.k8s.io/).
+- Supports Linux, macOS and Windows.
 
 ## Pre-requisite
 **Required** : Installing [Docker](/blog/docker-quick-install)  
