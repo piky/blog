@@ -17,6 +17,9 @@ This setup eliminates the need for local installations and configurations, enabl
 It allows developers to create and manage development environments directly from their GitHub repositories.
 Codespaces come pre-configured with the necessary tools and dependencies, enabling developers to start coding without any setup.    
 
+## Google Colab
+[Google Collab](https://colab.google/) is a cloud-based Jupyter Notebook environment for cell-based interactive Python. It suits Data Science, Machine Learning, RAG LLM and AI developments.
+
 ## Firebase Studio
 [Firebase Studio](https://firebase.google.com/products/studio) is a cloud-based development environment
 that integrates with Firebase services.
