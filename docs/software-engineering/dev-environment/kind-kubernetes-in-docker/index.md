@@ -48,7 +48,6 @@ $ sudo mv ./kind /usr/local/bin/kind
 ```sh
 $ kind create cluster --image kindest/node:v1.33.4
 ```
-
 ## The most effective usage of KinD
 Use a configuration file for advanced scenarios: For more complex configurations, such as multi-node clusters or custom networking, you can define the image in a YAML configuration file.
 
@@ -106,13 +105,17 @@ $ kind create cluster --config kind-no-proxy-config.yaml
 Install Cilium CNI using Helm
 ```sh
  $ helm install cilium cilium/cilium \
-  --namespace kube-system \
-  --set=ipam.mode=kubernetes \
-  --set=kubeProxyReplacement=true \
-  --set=securityContext.capabilities.ciliumAgent="{CHOWN,KILL,NET_ADMIN,NET_RAW,IPC_LOCK,SYS_ADMIN,SYS_RESOURCE,DAC_OVERRIDE,FOWNER,SETGID,SETUID}" \
-  --set=securityContext.capabilities.cleanCiliumState="{NET_ADMIN,SYS_ADMIN,SYS_RESOURCE}" \
-  --set=cgroup.autoMount.enabled=false \
-  --set=cgroup.hostRoot=/sys/fs/cgroup \
-  --set=k8sServiceHost=localhost \
-  --set=k8sServicePort=7445
+    --namespace kube-system \
+    --set=ipam.mode=kubernetes \
+    --set=kubeProxyReplacement=true \
+    --set=securityContext.capabilities.ciliumAgent="{CHOWN,KILL,NET_ADMIN,NET_RAW,IPC_LOCK,SYS_ADMIN,SYS_RESOURCE,DAC_OVERRIDE,FOWNER,SETGID,SETUID}" \
+    --set=securityContext.capabilities.cleanCiliumState="{NET_ADMIN,SYS_ADMIN,SYS_RESOURCE}" \
+    --set=cgroup.autoMount.enabled=false \
+    --set=cgroup.hostRoot=/sys/fs/cgroup \
+    --set=k8sServiceHost=localhost \
+    --set=k8sServicePort=7445
+```
+## Cleanup
+```sh
+$ kind delete cluster
 ```
