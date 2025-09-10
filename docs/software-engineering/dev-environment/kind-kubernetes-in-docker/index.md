@@ -95,8 +95,8 @@ nodes:
 - role: worker
 - role: worker
 networking:
-disableDefaultCNI: true
-kubeProxyMode: none
+  disableDefaultCNI: true
+  kubeProxyMode: none
 ```
 Then create an HA cluster without kube-proxy:
 ```sh
