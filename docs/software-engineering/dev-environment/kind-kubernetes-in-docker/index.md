@@ -25,8 +25,9 @@ kind was primarily designed for testing Kubernetes itself, but may be used for l
 
 ## Pre-requisite
 **Required** : Installing [Docker](/blog/docker-quick-install)  
-**Required** : Installing [kubectl](https://kubernetes.io/docs/tasks/tools/) and  
-**Recommended** : Installing [Helm CLI](https://helm.sh/docs/intro/install/)
+**Required** : Installing [kubectl](https://kubernetes.io/docs/tasks/tools/) 
+**Recommended** : Installing [Helm CLI](https://helm.sh/docs/intro/install/) and 
+**Recommended** : Installing [Cilium CLI](https://github.com/cilium/cilium-cli)
 
 ## Install KinD
 Follow the instructions of KinD [official GitHub Repo](https://github.com/kubernetes-sigs/kind) or [Quick Start guide](https://kind.sigs.k8s.io/docs/user/quick-start/) for platform specific.
@@ -104,16 +105,8 @@ $ kind create cluster --config kind-no-proxy-config.yaml
 
 Install Cilium CNI using Helm
 ```sh
- $ helm install cilium cilium/cilium \
-    --namespace kube-system \
-    --set=ipam.mode=kubernetes \
-    --set=kubeProxyReplacement=true \
-    --set=securityContext.capabilities.ciliumAgent="{CHOWN,KILL,NET_ADMIN,NET_RAW,IPC_LOCK,SYS_ADMIN,SYS_RESOURCE,DAC_OVERRIDE,FOWNER,SETGID,SETUID}" \
-    --set=securityContext.capabilities.cleanCiliumState="{NET_ADMIN,SYS_ADMIN,SYS_RESOURCE}" \
-    --set=cgroup.autoMount.enabled=false \
-    --set=cgroup.hostRoot=/sys/fs/cgroup \
-    --set=k8sServiceHost=localhost \
-    --set=k8sServicePort=7445
+ $ cilium install
+ $ cilium status
 ```
 ## Cleanup
 ```sh
