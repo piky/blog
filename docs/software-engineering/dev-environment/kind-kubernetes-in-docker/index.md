@@ -108,7 +108,7 @@ Install Cilium CNI using Helm:
  $ cilium status
  $ cilium config view
 ```
-Install Gateway API:
+Install Gateway API CRDs:
 ```sh
 $ kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.3.0/standard-install.yaml
 ```
