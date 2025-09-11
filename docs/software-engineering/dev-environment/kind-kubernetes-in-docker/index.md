@@ -102,15 +102,20 @@ Then create an HA cluster without kube-proxy:
 ```sh
 $ kind create cluster --config kind-no-proxy-config.yaml
 ```
-Install Cilium CNI using Helm
+Install Cilium CNI with Gateway Controller:
 ```sh
  $ cilium install --set kubeProxyReplacement=true --set gatewayAPI.enabled=true
  $ cilium status
  $ cilium config view
 ```
-Install Gateway API
+Install Gateway API CRDs:
 ```sh
 $ kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.3.0/standard-install.yaml
+```
+Verify success by installing Istio's Bookinfo applications and Cilium's Gateway with HTTPRoutes:
+```sh
+$ kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.27/samples/bookinfo/platform/kube/bookinfo.yaml
+$ kubectl apply -f https://raw.githubusercontent.com/cilium/cilium/1.18.0/examples/kubernetes/gateway/basic-http.yaml
 ```
 ## Cleanup
 ```sh
