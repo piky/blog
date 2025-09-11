@@ -102,8 +102,7 @@ Then create an HA cluster without kube-proxy:
 ```sh
 $ kind create cluster --config kind-no-proxy-config.yaml
 ```
-:::info 
-![Basic HTTP Routing](https://cdn.sanity.io/images/xinsvxfu/production/a4b92641ecd979505f42a7d97fed253a9f365331-2630x1176.png?auto=format&q=80&fit=clip&w=2560)
+:::warning Pre-requisite 
 ### L3/L7 Traffic Management with Gateway API
 For serving HTTP2/gRPC/WebSocket, or very large-scale cluster (worker >10+ and services >100+), considering Gateway API rather than Ingress Controller is recommended.  
 Install Gateway API CRDs:
@@ -177,6 +176,9 @@ $ curl http://$EXTERNAL_IP/
 Hello Kubernetes bootcamp! | Running on: kubernetes-bootcamp-658f6cbd58-mnrnx | v=1
 ```
 :::
+:::info A Real-World Scenario
+### Deploying Bookinfo Applications
+![Basic HTTP Routing](https://cdn.sanity.io/images/xinsvxfu/production/a4b92641ecd979505f42a7d97fed253a9f365331-2630x1176.png?auto=format&q=80&fit=clip&w=2560)
 Verify success by installing Istio's Bookinfo applications and Cilium's Gateway with HTTPRoutes:
 ```sh
 $ kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.27/samples/bookinfo/platform/kube/bookinfo.yaml
@@ -203,6 +205,7 @@ $ curl -v -H 'magic: foo' http://"$GATEWAY"\?great\=example
 ```sh
 $ curl --fail -s http://$GATEWAY/details/1 | jq .
 ```
+:::
 :::danger Cleanup
 ## Delete KinD Cluster
 ```sh
