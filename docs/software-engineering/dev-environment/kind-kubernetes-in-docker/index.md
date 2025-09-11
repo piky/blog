@@ -25,8 +25,8 @@ kind was primarily designed for testing Kubernetes itself, but may be used for l
 
 ## Pre-requisite
 **Required** : Installing [Docker](/blog/docker-quick-install)  
-**Required** : Installing [kubectl](https://kubernetes.io/docs/tasks/tools/) 
-**Recommended** : Installing [Helm CLI](https://helm.sh/docs/intro/install/) and 
+**Required** : Installing [kubectl](https://kubernetes.io/docs/tasks/tools/)  
+**Recommended** : Installing [Helm CLI](https://helm.sh/docs/intro/install/) and  
 **Recommended** : Installing [Cilium CLI](https://github.com/cilium/cilium-cli)
 
 ## Install KinD
