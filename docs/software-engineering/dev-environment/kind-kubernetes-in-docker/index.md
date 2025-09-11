@@ -204,6 +204,7 @@ $ curl -v -H 'magic: foo' http://"$GATEWAY"\?great\=example
 $ curl --fail -s http://$GATEWAY/details/1 | jq .
 ```
 :::danger Cleanup
+## Delete KinD Cluster
 ```sh
 $ kind delete cluster
 ```
