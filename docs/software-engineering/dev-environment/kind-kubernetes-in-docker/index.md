@@ -49,7 +49,7 @@ $ sudo mv ./kind /usr/local/bin/kind
 ```sh
 $ kind create cluster --image kindest/node:v1.33.4
 ```
-## The most effective usage of KinD
+## Advanced Usage
 Use a configuration file for advanced scenarios: For more complex configurations, such as multi-node clusters or custom networking, you can define the image in a YAML configuration file.
 
 ### Create a cluster with standard Kubernetes API server address and port
@@ -102,6 +102,19 @@ Then create an HA cluster without kube-proxy:
 ```sh
 $ kind create cluster --config kind-no-proxy-config.yaml
 ```
+:::info 
+![Basic HTTP Routing](https://cdn.sanity.io/images/xinsvxfu/production/a4b92641ecd979505f42a7d97fed253a9f365331-2630x1176.png?auto=format&q=80&fit=clip&w=2560)
+### L3/L7 Traffic Management with Gateway API
+For serving HTTP2/gRPC/WebSocket, or very large-scale cluster (worker >10+ and services >100+), considering Gateway API rather than Ingress Controller is recommended.  
+Install Gateway API CRDs:
+```sh
+$ kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.3.0/standard-install.yaml
+```
+Ensure that installation was successfully.
+```sh
+$ kubectl get crd gatewayclasses.gateway.networking.k8s.io
+```
+:::
 Install Cilium CNI with Gateway Controller:
 ```sh
  $ cilium install --set kubeProxyReplacement=true --set gatewayAPI.enabled=true
@@ -109,7 +122,8 @@ Install Cilium CNI with Gateway Controller:
  $ cilium config view
 ```
 :::tip MetalLB
-### Using MetalLB as an L2 local Load Balancer for KinD 
+![Simple Gateway](https://gateway-api.sigs.k8s.io/images/single-service-gateway.png)
+### Local L2 Load-Balancer with MetalLB
 Get Docker network that KinD is running:
 ```sh
 $ docker network inspect kind | jq .[].IPAM.Config
@@ -141,11 +155,14 @@ Install MetalLB:
 ```sh
 $ helm install metallb metallb/metallb --namespace metallb-system --create-namespace
 ```
-Wait til all pod status are READY to reconfigure MetalLB:
+```sh
+$ kubectl get pods -n metallb-system
+```
+Wait til all pod STATUS are READY to configure MetalLB:
 ```sh
 $ kubectl apply -f metallb-config.yaml
 ```
-Verify connectivity:
+Test whether MetalLB is working correctly:
 ```sh
 $ kubectl create deployment kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1
 ```
@@ -156,17 +173,10 @@ $ kubectl expose deployment/kubernetes-bootcamp --type="LoadBalancer" --port 80
 $ EXTERNAL_IP=$(kubectl get svc kubernetes-bootcamp -o json | jq -r '.status.loadBalancer.ingress[0].ip')
 ```
 ```sh
-$ curl http://$EXTERNAL-IP/
+$ curl http://$EXTERNAL_IP/
 Hello Kubernetes bootcamp! | Running on: kubernetes-bootcamp-658f6cbd58-mnrnx | v=1
 ```
 :::
-:::info Gateway API
-For serving HTTP2/gRPC/WebSocket, or very large-scale cluster (worker >10+ & services >100+),
-Considering Gateway API rather than Ingress Controller is recommended.
-Install Gateway API CRDs:
-```sh
-$ kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.3.0/standard-install.yaml
-```
 Verify success by installing Istio's Bookinfo applications and Cilium's Gateway with HTTPRoutes:
 ```sh
 $ kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.27/samples/bookinfo/platform/kube/bookinfo.yaml
@@ -174,7 +184,22 @@ $ kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.27/sa
 ```sh
 $ kubectl apply -f https://raw.githubusercontent.com/cilium/cilium/1.18.0/examples/kubernetes/gateway/basic-http.yaml
 ```
-:::
+```sh
+$ kubectl get svc cilium-gateway-my-gateway 
+NAME                        TYPE           CLUSTER-IP     EXTERNAL-IP    PORT(S)        AGE
+cilium-gateway-my-gateway   LoadBalancer   10.96.190.51   172.18.255.1   80:32243/TCP   30s
+```
+```sh
+$ kubectl get gateway
+NAME         CLASS    ADDRESS        PROGRAMMED   AGE
+my-gateway   cilium   172.18.255.1   True         98s
+```
+```sh
+$ GATEWAY=$(kubectl get gateway my-gateway -o jsonpath='{.status.addresses[0].value}')
+```
+```sh
+curl --fail -s http://$GATEWAY/details/1 | j
+```
 :::danger Cleanup
 ```sh
 $ kind delete cluster
