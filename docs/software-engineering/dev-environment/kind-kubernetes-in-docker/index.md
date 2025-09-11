@@ -198,7 +198,10 @@ my-gateway   cilium   172.18.255.1   True         98s
 $ GATEWAY=$(kubectl get gateway my-gateway -o jsonpath='{.status.addresses[0].value}')
 ```
 ```sh
-curl --fail -s http://$GATEWAY/details/1 | j
+$ curl -v -H 'magic: foo' http://"$GATEWAY"\?great\=example
+```
+```sh
+curl --fail -s http://$GATEWAY/details/1 | jq .
 ```
 :::danger Cleanup
 ```sh
