@@ -105,9 +105,64 @@ $ kind create cluster --config kind-no-proxy-config.yaml
 Install Cilium CNI with Gateway Controller:
 ```sh
  $ cilium install --set kubeProxyReplacement=true --set gatewayAPI.enabled=true
- $ cilium status
+ $ cilium status --wait
  $ cilium config view
 ```
+:::tip MetalLB
+### Using MetalLB as an L2 local Load Balancer for KinD 
+Get Docker network that KinD is running:
+```sh
+$ docker network inspect kind | jq .[].IPAM.Config
+```
+Create an IPAddressPool Resource:
+```yaml title="metallb-config.yaml"
+---
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: kind-pool
+  namespace: metallb-system
+spec:
+  addresses:
+  - 172.18.255.1-172.18.255.254 # Use last subnet CIDR from the docker command.
+  autoAssign: true
+  avoidBuggyIPs: false
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: lb
+  namespace: metallb-system
+spec:
+  ipAddressPools:
+  - kind-pool
+```
+Install MetalLB:
+```sh
+$ helm install metallb metallb/metallb --namespace metallb-system --create-namespace
+```
+Wait til all pod status are READY to reconfigure MetalLB:
+```sh
+$ kubectl apply -f metallb-config.yaml
+```
+Verify connectivity:
+```sh
+$ kubectl create deployment kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1
+```
+```sh
+$ kubectl expose deployment/kubernetes-bootcamp --type="LoadBalancer" --port 80
+```
+```sh
+$ EXTERNAL_IP=$(kubectl get svc kubernetes-bootcamp -o json | jq -r '.status.loadBalancer.ingress[0].ip')
+```
+```sh
+$ curl http://$EXTERNAL-IP/
+Hello Kubernetes bootcamp! | Running on: kubernetes-bootcamp-658f6cbd58-mnrnx | v=1
+```
+:::
+:::info Gateway API
+For serving HTTP2/gRPC/WebSocket, or very large-scale cluster (worker >10+ & services >100+),
+Considering Gateway API rather than Ingress Controller is recommended.
 Install Gateway API CRDs:
 ```sh
 $ kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.3.0/standard-install.yaml
@@ -115,9 +170,13 @@ $ kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/downl
 Verify success by installing Istio's Bookinfo applications and Cilium's Gateway with HTTPRoutes:
 ```sh
 $ kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.27/samples/bookinfo/platform/kube/bookinfo.yaml
+```
+```sh
 $ kubectl apply -f https://raw.githubusercontent.com/cilium/cilium/1.18.0/examples/kubernetes/gateway/basic-http.yaml
 ```
-## Cleanup
+:::
+:::danger Cleanup
 ```sh
 $ kind delete cluster
 ```
+:::
