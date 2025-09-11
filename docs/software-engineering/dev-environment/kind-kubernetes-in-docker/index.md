@@ -201,7 +201,7 @@ $ GATEWAY=$(kubectl get gateway my-gateway -o jsonpath='{.status.addresses[0].va
 $ curl -v -H 'magic: foo' http://"$GATEWAY"\?great\=example
 ```
 ```sh
-curl --fail -s http://$GATEWAY/details/1 | jq .
+$ curl --fail -s http://$GATEWAY/details/1 | jq .
 ```
 :::danger Cleanup
 ```sh
