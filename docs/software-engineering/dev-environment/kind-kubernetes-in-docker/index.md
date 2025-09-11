@@ -102,11 +102,15 @@ Then create an HA cluster without kube-proxy:
 ```sh
 $ kind create cluster --config kind-no-proxy-config.yaml
 ```
-
 Install Cilium CNI using Helm
 ```sh
- $ cilium install
+ $ cilium install --set kubeProxyReplacement=true --set gatewayAPI.enabled=true
  $ cilium status
+ $ cilium config view
+```
+Install Gateway API
+```sh
+$ kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.3.0/standard-install.yaml
 ```
 ## Cleanup
 ```sh
