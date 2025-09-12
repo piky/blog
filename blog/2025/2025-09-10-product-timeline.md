@@ -9,5 +9,5 @@ keywords: [cloud, cloud-native, devops, sre, platform-engineering, software-engi
 **Day-0** : define, design, modelling (i.e. Design Thinking)  
 **Day-1** : development, installation, configuration, deployment (i.e. CI/CD)  
 **Day-2** : re-configuration, update, backup, failover, restore, etc. (Conflict-needs phase, i.e. extensibility but efficiency and reliability)   
-IMHO, instead of so called **Day**, it should be **Phase** in terms of project management life cycle.  
-**Reference** : [Further reading](https://spacelift.io/blog/day-0-day-1-day-2-operations).
+*IMHO*, instead of so called **Day**, it should be **Phase** in terms of project management life cycle.  
+*Further reading* : [What are Day-0, Day-1, and Day-2 Operations?](https://spacelift.io/blog/day-0-day-1-day-2-operations).
