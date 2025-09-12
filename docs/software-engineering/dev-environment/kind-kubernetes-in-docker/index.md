@@ -105,7 +105,7 @@ $ kind create cluster --config kind-no-proxy-config.yaml
 :::warning Pre-requisite 
 ### L3/L7 Traffic Management with Gateway API
 For serving HTTP2/gRPC/WebSocket, or very large-scale cluster (worker >10+ and services >100+), considering Gateway API rather than Ingress Controller is recommended.  
-Install Gateway API CRDs:
+Install **Gateway API CRDs**:
 ```sh
 $ kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.3.0/standard-install.yaml
 ```
@@ -127,6 +127,22 @@ Get Docker network that KinD is running:
 ```sh
 $ docker network inspect kind | jq .[].IPAM.Config
 ```
+<details>
+<summary>Output</summary>
+```json
+[
+  {
+    "Subnet": "172.18.0.0/16",
+    "Gateway": "172.18.0.1"
+  },
+  {
+    "Subnet": "fc00:f853:ccd:e793::/64",
+    "Gateway": "fc00:f853:ccd:e793::1"
+  }
+]
+```
+</details>
+
 Create an IPAddressPool Resource:
 ```yaml title="metallb-config.yaml"
 ---
@@ -137,7 +153,7 @@ metadata:
   namespace: metallb-system
 spec:
   addresses:
-  - 172.18.255.1-172.18.255.254 # Use last subnet CIDR from the docker command.
+  - 172.18.255.1-172.18.255.254 # Use the last IPv4 subnet CIDR from the docker command.
   autoAssign: true
   avoidBuggyIPs: false
 ---
@@ -157,7 +173,7 @@ $ helm install metallb metallb/metallb --namespace metallb-system --create-names
 ```sh
 $ kubectl get pods -n metallb-system
 ```
-Wait til all pod STATUS are READY to configure MetalLB:
+Wait til all pod **STATUS** are **READY** to configure MetalLB:
 ```sh
 $ kubectl apply -f metallb-config.yaml
 ```
