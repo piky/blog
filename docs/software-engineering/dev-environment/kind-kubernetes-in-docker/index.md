@@ -161,7 +161,8 @@ Wait til all pod STATUS are READY to configure MetalLB:
 ```sh
 $ kubectl apply -f metallb-config.yaml
 ```
-Test whether MetalLB is working correctly:
+<details>
+<summary>Test whether MetalLB is working correctly:</summary>
 ```sh
 $ kubectl create deployment kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1
 ```
@@ -175,6 +176,7 @@ $ EXTERNAL_IP=$(kubectl get svc kubernetes-bootcamp -o json | jq -r '.status.loa
 $ curl http://$EXTERNAL_IP/
 Hello Kubernetes bootcamp! | Running on: kubernetes-bootcamp-658f6cbd58-mnrnx | v=1
 ```
+</details>
 :::
 :::info A Real-World Scenario
 ### Deploying Bookinfo Applications
