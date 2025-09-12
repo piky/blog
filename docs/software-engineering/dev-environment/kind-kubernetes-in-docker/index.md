@@ -223,6 +223,22 @@ $ curl -v -H 'magic: foo' http://"$GATEWAY"\?great\=example
 ```sh
 $ curl --fail -s http://$GATEWAY/details/1 | jq .
 ```
+<details>
+<summary>Output</summary>
+```json
+{
+  "id": 1,
+  "author": "William Shakespeare",
+  "year": 1595,
+  "type": "paperback",
+  "pages": 200,
+  "publisher": "PublisherA",
+  "language": "English",
+  "ISBN-10": "1234567890",
+  "ISBN-13": "123-1234567890"
+}
+```
+</details>
 :::
 :::danger Cleanup
 ## Delete KinD Cluster
