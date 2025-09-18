@@ -242,6 +242,56 @@ $ curl --fail -s http://$GATEWAY/details/1 | jq .
 ```
 </details>
 :::
+
+### HTTPS with self-signed TLS certificate
+**Create a certificate:**
+```sh
+$ mkcert '*.cilium.rocks'
+```
+<details>
+Created a new local CA 💥  
+Note: the local CA is not installed in the system trust store.  
+Run "mkcert -install" for certificates to be trusted automatically ⚠️
+
+Created a new certificate valid for the following names 📜
+ - "*.cilium.rocks"
+
+Reminder: X.509 wildcards only go one level deep, so this won't match a.b.cilium.rocks ℹ️
+
+The certificate is at "./_wildcard.cilium.rocks.pem" and the key at "./_wildcard.cilium.rocks-key.pem" ✅
+
+It will expire on 18 December 2027 🗓
+</details>
+
+**Let's now create a Kubernetes TLS secret** with this key and certificate:
+```sh
+$ kubectl create secret tls ca --key=_wildcard.cilium.rocks-key.pem --cert=_wildcard.cilium.rocks.pem
+```
+
+**Deploy Gateway for HTTPS Traffic**
+```sh
+$ kubectl apply -f https://raw.githubusercontent.com/cilium/cilium/1.18.2/examples/kubernetes/gateway/basic-https.yaml
+```
+
+**Edit the /etc/hosts file**
+```sh
+$ GATEWAY_IP=$(kubectl get gateway tls-gateway -o jsonpath='{.status.addresses[0].value}')
+```
+```sh
+$ cat << EOF >> /etc/hosts
+${GATEWAY_IP} bookinfo.cilium.rocks
+${GATEWAY_IP} hipstershop.cilium.rocks
+EOF
+```
+
+**Install self-signed certificates and test**
+```sh
+$ mkcert -install
+```
+```sh
+$ curl -s https://bookinfo.cilium.rocks/details/1 | jq .
+```
+
 :::danger Cleanup
 ## Delete KinD Cluster
 ```sh
