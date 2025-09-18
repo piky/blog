@@ -3,6 +3,7 @@
   "description": "Learn about change management in software engineering, including processes, tools, and best practices for managing changes effectively.",
   "position": 1,
   "link": {
-    "type": "generated-index"
+    "type": "doc",
+    "id" : "intro"
   }
 }
