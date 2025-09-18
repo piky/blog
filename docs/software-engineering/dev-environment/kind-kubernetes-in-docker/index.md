@@ -13,7 +13,7 @@ $ go install sigs.k8s.io/kind@v0.30.0 && time kind create cluster
 ```
 :::
 [kind](https://kind.sigs.k8s.io/) - Kubernetes in Docker, is a tool for running local Kubernetes clusters using Docker container “nodes”.
-kind was primarily designed for testing Kubernetes itself, but may be used for local development or CI.  
+kind was primarily designed for testing Kubernetes itself, but may be used for local development or CI, as well as proof-of-concept before upgrade current running cluster in productionsg.  
 
 ## Features
 - Spin up, tear down and rebuild clusters in seconds—literally.
@@ -123,6 +123,18 @@ Install Cilium CNI with Gateway Controller:
 :::tip MetalLB
 ![Simple Gateway](https://gateway-api.sigs.k8s.io/images/single-service-gateway.png)
 ### Local L2 Load-Balancer with MetalLB
+**Install MetalLB:**
+```sh
+$ helm install metallb metallb/metallb --namespace metallb-system --create-namespace
+```
+```sh
+$ kubectl get pods -n metallb-system
+```
+Wait til all pod **STATUS** are **READY** to configure MetalLB:
+```sh
+$ kubectl apply -f metallb-config.yaml
+```
+**Reconfigure MetalLB**
 Get Docker network that KinD is running:
 ```sh
 $ docker network inspect kind | jq .[].IPAM.Config
@@ -143,7 +155,7 @@ $ docker network inspect kind | jq .[].IPAM.Config
 ```
 </details>
 
-Create an IPAddressPool Resource:
+**Create an IPAddressPool Resource:**
 ```yaml title="metallb-config.yaml"
 ---
 apiVersion: metallb.io/v1beta1
@@ -166,19 +178,8 @@ spec:
   ipAddressPools:
   - kind-pool
 ```
-Install MetalLB:
-```sh
-$ helm install metallb metallb/metallb --namespace metallb-system --create-namespace
-```
-```sh
-$ kubectl get pods -n metallb-system
-```
-Wait til all pod **STATUS** are **READY** to configure MetalLB:
-```sh
-$ kubectl apply -f metallb-config.yaml
-```
 <details>
-<summary>Test whether MetalLB is working correctly:</summary>
+<summary>Optional: test whether MetalLB is working correctly:</summary>
 ```sh
 $ kubectl create deployment kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1
 ```
@@ -195,6 +196,7 @@ Hello Kubernetes bootcamp! | Running on: kubernetes-bootcamp-658f6cbd58-mnrnx | 
 </details>
 :::
 :::info A Real-World Scenario
+
 ### Deploying Bookinfo Applications
 ![Basic HTTP Routing](https://cdn.sanity.io/images/xinsvxfu/production/a4b92641ecd979505f42a7d97fed253a9f365331-2630x1176.png?auto=format&q=80&fit=clip&w=2560)
 Verify success by installing Istio's Bookinfo applications and Cilium's Gateway with HTTPRoutes:
