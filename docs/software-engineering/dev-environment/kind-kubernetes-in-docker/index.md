@@ -6,14 +6,14 @@ sidebar_position: 4
 tags: [kind, kubernetes, k8s, cluster, docker, container, container-runtime, cloud-native, application, cncf, development, paas]
 keywords: [kind, kubernetes, k8s, cluster, docker, container, container-runtime, cloud-native, application, cncf, development, paas]
 ---
-# Kubernetes IN Docker - local clusters for testing Kubernetes
+# Kubernetes in Docker - local clusters for testing Kubernetes
 :::tip tl;dr
 ```sh
 $ go install sigs.k8s.io/kind@v0.30.0 && time kind create cluster
 ```
 :::
 [kind](https://kind.sigs.k8s.io/) - Kubernetes in Docker, is a tool for running local Kubernetes clusters using Docker container “nodes”.
-kind was primarily designed for testing Kubernetes itself, but may be used for local development or CI, as well as proof-of-concept before upgrade current running cluster in productionsg.  
+kind was primarily designed for testing Kubernetes itself, but may be used for local development or CI, as well as proof-of-concept before upgrade current running cluster in production.  
 
 ## Features
 - Spin up, tear down and rebuild clusters in seconds—literally.
@@ -24,10 +24,10 @@ kind was primarily designed for testing Kubernetes itself, but may be used for l
 - Supports Linux, macOS and Windows.
 
 ## Pre-requisite
-**Required** : Installing [Docker](/blog/docker-quick-install)  
-**Required** : Installing [kubectl](https://kubernetes.io/docs/tasks/tools/)  
-**Recommended** : Installing [Helm CLI](https://helm.sh/docs/intro/install/) and  
-**Recommended** : Installing [Cilium CLI](https://github.com/cilium/cilium-cli)
+Installing [Docker](/blog/docker-quick-install)  
+Installing [kubectl](https://kubernetes.io/docs/tasks/tools/)  
+Installing [Helm CLI](https://helm.sh/docs/intro/install/) and  
+Installing [Cilium CLI](https://github.com/cilium/cilium-cli)
 
 ## Install KinD
 Follow the instructions of KinD [official GitHub Repo](https://github.com/kubernetes-sigs/kind) or [Quick Start guide](https://kind.sigs.k8s.io/docs/user/quick-start/) for platform specific.
@@ -134,8 +134,8 @@ Wait til all pod **STATUS** are **READY** to configure MetalLB:
 ```sh
 $ kubectl apply -f metallb-config.yaml
 ```
-**Reconfigure MetalLB**
-Get Docker network that KinD is running:
+**Configure MetalLB:**  
+Get Docker network that KinD is running on:
 ```sh
 $ docker network inspect kind | jq .[].IPAM.Config
 ```
@@ -249,6 +249,8 @@ $ curl --fail -s http://$GATEWAY/details/1 | jq .
 $ mkcert '*.cilium.rocks'
 ```
 <details>
+<summary>Output</summary>  
+```
 Created a new local CA 💥  
 Note: the local CA is not installed in the system trust store.  
 Run "mkcert -install" for certificates to be trusted automatically ⚠️
@@ -261,6 +263,7 @@ Reminder: X.509 wildcards only go one level deep, so this won't match a.b.cilium
 The certificate is at "./_wildcard.cilium.rocks.pem" and the key at "./_wildcard.cilium.rocks-key.pem" ✅
 
 It will expire on 18 December 2027 🗓
+```
 </details>
 
 **Let's now create a Kubernetes TLS secret** with this key and certificate:
