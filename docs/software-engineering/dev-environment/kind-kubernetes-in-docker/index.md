@@ -114,7 +114,11 @@ $ cilium config view
 $ kubectl get nodes -o wide
 ```
 
-### Installing Cloud Provider KIND
+### L2 Load-balancer
+![Simple Gateway](https://gateway-api.sigs.k8s.io/images/single-service-gateway.png)
+<details>
+<summary>Option 1 : using Cloud Provider KIND</summary>
+<p>
 [Cloud Provider KIND](https://github.com/kubernetes-sigs/cloud-provider-kind) brings up the Kubernetes service of type `LoadBalancer` working in a KinD cluster.  
 To install it using Go:  
 ```sh
@@ -125,17 +129,17 @@ $ sudo install ~/go/bin/cloud-provider-kind /usr/local/bin
 ```
 Run Cloud Provider KIND as a foreground process.
 ```sh
-$ tmux new -s cloud-provider-kind`
+$ tmux new -s cloud-provider-kind
 ```
 ```sh
 $ cloud-provider-kind
 ```
+</p>
+</details>
 
 <details>
-<summary>Local L2 Load-Balancer with MetalLB</summary>
-
-![Simple Gateway](https://gateway-api.sigs.k8s.io/images/single-service-gateway.png)
-### Local L2 Load-Balancer with MetalLB
+<summary>Option 2 : using MetalLB</summary>
+<p>
 **Install MetalLB:**
 ```sh
 $ helm install metallb metallb/metallb --namespace metallb-system --create-namespace
@@ -207,13 +211,17 @@ $ curl http://$EXTERNAL_IP/
 Hello Kubernetes bootcamp! | Running on: kubernetes-bootcamp-658f6cbd58-mnrnx | v=1
 ```
 </details>
+</p>
 </details>
 
+
+### L3/L7 Advanced Traffic Management
 <details>
-<summary>L3/L7 Traffic Management with Gateway API</summary>
-### L3/L7 Traffic Management with Gateway API
-For serving HTTP2/gRPC/WebSocket, or very large-scale cluster (worker >10+ and services >100+), considering Gateway API rather than Ingress Controller is recommended.  
-Install **Gateway API CRDs**:
+<summary>Kubernetes Gateway API</summary>
+
+[Gateway API](https://github.com/kubernetes-sigs/gateway-api) is ideal for large-scale cluster (i.e. 10+ workers and 100+ services). In addition to drop-in traditional Ingress Controller features, it also supports HTTP2/gRPC/WebSocket.  
+
+**Install Gateway API CRDs**:
 ```sh
 $ kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.3.0/standard-install.yaml
 ```
@@ -223,10 +231,11 @@ $ kubectl get crd gatewayclasses.gateway.networking.k8s.io
 ```
 </details>
 
-:::info A Real-World Scenario
-
-### Deploying Bookinfo Applications
+### Real-world Scenario
 ![Basic HTTP Routing](https://cdn.sanity.io/images/xinsvxfu/production/a4b92641ecd979505f42a7d97fed253a9f365331-2630x1176.png?auto=format&q=80&fit=clip&w=2560)
+<details>
+<summary>Deploying Bookinfo Demo Applications</summary>
+
 Verify success by installing Istio's Bookinfo applications and Cilium's Gateway with HTTPRoutes:
 ```sh
 $ kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.27/samples/bookinfo/platform/kube/bookinfo.yaml
@@ -269,9 +278,11 @@ $ curl --fail -s http://$GATEWAY/details/1 | jq .
 }
 ```
 </details>
-:::
+</details>
 
-### HTTPS with self-signed TLS certificate
+<details>
+<summary>HTTPS with self-signed TLS certificate</summary>
+
 **Create a certificate:**
 ```sh
 $ mkcert '*.cilium.rocks'
@@ -323,6 +334,7 @@ $ mkcert -install
 ```sh
 $ curl -s https://bookinfo.cilium.rocks/details/1 | jq .
 ```
+</details>
 
 :::danger Cleanup
 ## Delete KinD Cluster
