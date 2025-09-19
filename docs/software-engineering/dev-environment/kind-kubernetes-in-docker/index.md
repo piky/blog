@@ -114,6 +114,22 @@ $ cilium config view
 $ kubectl get nodes -o wide
 ```
 
+### L3/L7 Traffic Management
+<details>
+<summary>Kubernetes Gateway API</summary>
+
+[Gateway API](https://github.com/kubernetes-sigs/gateway-api) is ideal for large-scale cluster (i.e. 10+ workers and 100+ services). In addition to drop-in traditional Ingress Controller features, it also supports HTTP2/gRPC/WebSocket.  
+
+**Install Gateway API CRDs**:
+```sh
+$ kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.3.0/standard-install.yaml
+```
+Ensure that installation was successfully.
+```sh
+$ kubectl get crd gatewayclasses.gateway.networking.k8s.io
+```
+</details>
+
 ### L2 Load-balancer
 ![Simple Gateway](https://gateway-api.sigs.k8s.io/images/single-service-gateway.png)
 <details>
@@ -144,8 +160,9 @@ $ cloud-provider-kind
 ```sh
 $ helm install metallb metallb/metallb --namespace metallb-system --create-namespace
 ```
+Wait til all pod **STATUS** are **READY** then configure MetalLB.
 ```sh
-$ kubectl get pods -n metallb-system
+$ kubectl wait --namespace metallb-system --for=condition=ready pod --selector=app.kubernetes.io/name=metallb --timeout=240s
 ```
 **Configure MetalLB:**  
 Get Docker network that KinD is running on:
@@ -191,7 +208,6 @@ spec:
   ipAddressPools:
   - kind-pool
 ```
-Wait til all pod **STATUS** are **READY** then configure MetalLB.
 ```sh
 $ kubectl apply -f metallb-config.yaml
 ```
@@ -201,35 +217,19 @@ $ kubectl apply -f metallb-config.yaml
 $ kubectl create deployment kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1
 ```
 ```sh
-$ kubectl expose deployment/kubernetes-bootcamp --type="LoadBalancer" --port 80
+$ kubectl expose deployment/kubernetes-bootcamp --type="LoadBalancer" --port 8080
 ```
 ```sh
 $ EXTERNAL_IP=$(kubectl get svc kubernetes-bootcamp -o json | jq -r '.status.loadBalancer.ingress[0].ip')
 ```
 ```sh
-$ curl http://$EXTERNAL_IP/
+$ curl http://$EXTERNAL_IP:8080/
 Hello Kubernetes bootcamp! | Running on: kubernetes-bootcamp-658f6cbd58-mnrnx | v=1
 ```
 </details>
 </p>
 </details>
 
-
-### L3/L7 Advanced Traffic Management
-<details>
-<summary>Kubernetes Gateway API</summary>
-
-[Gateway API](https://github.com/kubernetes-sigs/gateway-api) is ideal for large-scale cluster (i.e. 10+ workers and 100+ services). In addition to drop-in traditional Ingress Controller features, it also supports HTTP2/gRPC/WebSocket.  
-
-**Install Gateway API CRDs**:
-```sh
-$ kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.3.0/standard-install.yaml
-```
-Ensure that installation was successfully.
-```sh
-$ kubectl get crd gatewayclasses.gateway.networking.k8s.io
-```
-</details>
 
 ### Real-world Scenario
 ![Basic HTTP Routing](https://cdn.sanity.io/images/xinsvxfu/production/a4b92641ecd979505f42a7d97fed253a9f365331-2630x1176.png?auto=format&q=80&fit=clip&w=2560)
