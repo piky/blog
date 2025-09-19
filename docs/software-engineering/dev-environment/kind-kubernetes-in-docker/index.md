@@ -109,6 +109,10 @@ $ kind create cluster --config kind-no-proxy-config.yaml
 ```sh
  $ cilium config view
 ```
+```sh
+$ kubectl get nodes -o wide
+```
+
 <details>
 <summary>Local L2 Load-Balancer with MetalLB</summary>
 
