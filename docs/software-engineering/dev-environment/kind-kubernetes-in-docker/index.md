@@ -130,10 +130,6 @@ $ helm install metallb metallb/metallb --namespace metallb-system --create-names
 ```sh
 $ kubectl get pods -n metallb-system
 ```
-Wait til all pod **STATUS** are **READY** to configure MetalLB:
-```sh
-$ kubectl apply -f metallb-config.yaml
-```
 **Configure MetalLB:**  
 Get Docker network that KinD is running on:
 ```sh
@@ -155,7 +151,7 @@ $ docker network inspect kind | jq .[].IPAM.Config
 ```
 </details>
 
-**Create an IPAddressPool Resource:**
+Create an IPAddressPool Resource.
 ```yaml title="metallb-config.yaml"
 ---
 apiVersion: metallb.io/v1beta1
@@ -178,8 +174,12 @@ spec:
   ipAddressPools:
   - kind-pool
 ```
+Wait til all pod **STATUS** are **READY** to configure MetalLB.
+```sh
+$ kubectl apply -f metallb-config.yaml
+```
 <details>
-<summary>Optional: test whether MetalLB is working correctly:</summary>
+<summary>Optional: Verify whether MetalLB works correctly:</summary>
 ```sh
 $ kubectl create deployment kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1
 ```
@@ -271,7 +271,7 @@ It will expire on 18 December 2027 🗓
 $ kubectl create secret tls ca --key=_wildcard.cilium.rocks-key.pem --cert=_wildcard.cilium.rocks.pem
 ```
 
-**Deploy Gateway for HTTPS Traffic**
+**Deploy Gateway for HTTPS traffic**
 ```sh
 $ kubectl apply -f https://raw.githubusercontent.com/cilium/cilium/1.18.2/examples/kubernetes/gateway/basic-https.yaml
 ```
@@ -287,10 +287,11 @@ ${GATEWAY_IP} hipstershop.cilium.rocks
 EOF
 ```
 
-**Install self-signed certificates and test**
+**Install self-signed certificates**
 ```sh
 $ mkcert -install
 ```
+**Ensure that HTTPS works**
 ```sh
 $ curl -s https://bookinfo.cilium.rocks/details/1 | jq .
 ```
