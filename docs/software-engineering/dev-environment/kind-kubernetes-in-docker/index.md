@@ -105,12 +105,31 @@ $ kind create cluster --config kind-no-proxy-config.yaml
 
 ### L3/L7 Traffic Management
 <details>
-<summary>Kubernetes Gateway API</summary>
+<summary>Option 1 : Ingress Controller</summary>
 
-[Gateway API](https://github.com/kubernetes-sigs/gateway-api) is ideal for large-scale cluster (i.e. 10+ workers and 100+ services). In addition to drop-in traditional Ingress Controller features, it also supports HTTP2/gRPC/WebSocket.  
+```sh
+$ kubectl apply -f https://kind.sigs.k8s.io/examples/ingress/deploy-ingress-nginx.yaml
+```
+```sh
+$ kubectl wait --namespace ingress-nginx \
+  --for=condition=ready pod \
+  --selector=app.kubernetes.io/component=controller \
+  --timeout=90s
+```
+```sh
+$ kubectl apply -f https://kind.sigs.k8s.io/examples/ingress/usage.yaml
+```
+```sh
+$ kubectl -n ingress-nginx get services
+```
+</details>
+
+<details>
+<summary>Option 2 : Kubernetes Gateway API</summary>
 :::danger PRE-REQUISITE
 If you need Cilium Gateway API, the Gateway API CRDs must be installed first.
 :::
+[Gateway API](https://github.com/kubernetes-sigs/gateway-api) is ideal for large-scale cluster (i.e. 10+ workers and 100+ services). In addition to drop-in traditional Ingress Controller features, it also supports HTTP2/gRPC/WebSocket.  
 **Install Gateway API CRDs**:
 ```sh
 $ kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.3.0/standard-install.yaml
