@@ -339,6 +339,21 @@ $ curl -s https://bookinfo.cilium.rocks/details/1 | jq .
 ```
 </details>
 
+:::tip SSH TUNNEL
+Chances are you running KinD on a remote host and need to send traffic to KinD node IPs from a different host than where KinD is running.  
+**On remote KinD host**
+```sh
+$ LB_IP=$(kubectl get gateway my-gateway -o jsonpath='{.status.addresses[0].value}')
+```
+```sh 
+$ echo $LB_IP
+```
+**On local SSH client:**
+```sh
+$ ssh -L 8080:<$IB_IP>:80 username@<SSH-SERVER>
+```
+:::
+
 :::danger Cleanup
 ## Delete KinD Cluster
 ```sh
