@@ -104,10 +104,15 @@ $ kind create cluster --config kind-no-proxy-config.yaml
 ```
 **Install Cilium CNI:**
 ```sh
- $ cilium install --set kubeProxyReplacement=true --set gatewayAPI.enabled=true
- $ cilium status --wait
+ $ cilium install --set kubeProxyReplacement=true --set gatewayAPI.enabled=true && cilium status --wait
+```
+```sh
  $ cilium config view
 ```
+```sh
+$ kubectl get nodes -o wide
+```
+
 <details>
 <summary>Local L2 Load-Balancer with MetalLB</summary>
 
