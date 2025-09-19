@@ -115,13 +115,15 @@ $ kubectl get nodes -o wide
 ```
 
 ### Installing Cloud Provider KIND
+[Cloud Provider KIND](https://github.com/kubernetes-sigs/cloud-provider-kind) brings up the Kubernetes service of type `LoadBalancer` working in a KinD cluster.  
+To install it using Go:  
 ```sh
 $ go install sigs.k8s.io/cloud-provider-kind@latest
 ```
 ```sh
 $ sudo install ~/go/bin/cloud-provider-kind /usr/local/bin
 ```
-Run Cloud Provider KIND as a foreground process
+Run Cloud Provider KIND as a foreground process.
 ```sh
 $ tmux new -s cloud-provider-kind`
 ```
