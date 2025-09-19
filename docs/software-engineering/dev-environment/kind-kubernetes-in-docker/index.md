@@ -104,8 +104,9 @@ $ kind create cluster --config kind-no-proxy-config.yaml
 ```
 **Install Cilium CNI:**
 ```sh
- $ cilium install --set kubeProxyReplacement=true --set gatewayAPI.enabled=true
- $ cilium status --wait
+ $ cilium install --set kubeProxyReplacement=true --set gatewayAPI.enabled=true && cilium status --wait
+```
+```sh
  $ cilium config view
 ```
 <details>
