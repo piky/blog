@@ -102,6 +102,25 @@ Then create an HA cluster without kube-proxy:
 ```sh
 $ kind create cluster --config kind-no-proxy-config.yaml
 ```
+
+### L3/L7 Traffic Management
+<details>
+<summary>Kubernetes Gateway API</summary>
+
+[Gateway API](https://github.com/kubernetes-sigs/gateway-api) is ideal for large-scale cluster (i.e. 10+ workers and 100+ services). In addition to drop-in traditional Ingress Controller features, it also supports HTTP2/gRPC/WebSocket.  
+:::danger PRE-REQUISITE
+If you need Cilium Gateway API, the Gateway API CRDs must be installed first.
+:::
+**Install Gateway API CRDs**:
+```sh
+$ kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.3.0/standard-install.yaml
+```
+Ensure that installation was successfully.
+```sh
+$ kubectl get crd gatewayclasses.gateway.networking.k8s.io
+```
+</details>
+
 **Install Cilium CNI:**
 ```sh
 $ cilium install --set kubeProxyReplacement=true --set gatewayAPI.enabled=true && cilium status --wait
@@ -113,22 +132,6 @@ $ cilium config view
 ```sh
 $ kubectl get nodes -o wide
 ```
-
-### L3/L7 Traffic Management
-<details>
-<summary>Kubernetes Gateway API</summary>
-
-[Gateway API](https://github.com/kubernetes-sigs/gateway-api) is ideal for large-scale cluster (i.e. 10+ workers and 100+ services). In addition to drop-in traditional Ingress Controller features, it also supports HTTP2/gRPC/WebSocket.  
-
-**Install Gateway API CRDs**:
-```sh
-$ kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.3.0/standard-install.yaml
-```
-Ensure that installation was successfully.
-```sh
-$ kubectl get crd gatewayclasses.gateway.networking.k8s.io
-```
-</details>
 
 ### L2 Load-balancer
 ![Simple Gateway](https://gateway-api.sigs.k8s.io/images/single-service-gateway.png)
