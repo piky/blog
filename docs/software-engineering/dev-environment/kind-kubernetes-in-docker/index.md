@@ -102,25 +102,15 @@ Then create an HA cluster without kube-proxy:
 ```sh
 $ kind create cluster --config kind-no-proxy-config.yaml
 ```
-:::warning Pre-requisite 
-### L3/L7 Traffic Management with Gateway API
-For serving HTTP2/gRPC/WebSocket, or very large-scale cluster (worker >10+ and services >100+), considering Gateway API rather than Ingress Controller is recommended.  
-Install **Gateway API CRDs**:
-```sh
-$ kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.3.0/standard-install.yaml
-```
-Ensure that installation was successfully.
-```sh
-$ kubectl get crd gatewayclasses.gateway.networking.k8s.io
-```
-:::
-Install Cilium CNI with Gateway Controller:
+**Install Cilium CNI:**
 ```sh
  $ cilium install --set kubeProxyReplacement=true --set gatewayAPI.enabled=true
  $ cilium status --wait
  $ cilium config view
 ```
-:::tip MetalLB
+<details>
+<summary>Local L2 Load-Balancer with MetalLB</summary>
+
 ![Simple Gateway](https://gateway-api.sigs.k8s.io/images/single-service-gateway.png)
 ### Local L2 Load-Balancer with MetalLB
 **Install MetalLB:**
@@ -174,12 +164,12 @@ spec:
   ipAddressPools:
   - kind-pool
 ```
-Wait til all pod **STATUS** are **READY** to configure MetalLB.
+Wait til all pod **STATUS** are **READY** then configure MetalLB.
 ```sh
 $ kubectl apply -f metallb-config.yaml
 ```
 <details>
-<summary>Optional: Verify whether MetalLB works correctly:</summary>
+<summary>To verify:</summary>
 ```sh
 $ kubectl create deployment kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1
 ```
@@ -194,7 +184,22 @@ $ curl http://$EXTERNAL_IP/
 Hello Kubernetes bootcamp! | Running on: kubernetes-bootcamp-658f6cbd58-mnrnx | v=1
 ```
 </details>
-:::
+</details>
+
+<details>
+<summary>L3/L7 Traffic Management with Gateway API</summary>
+### L3/L7 Traffic Management with Gateway API
+For serving HTTP2/gRPC/WebSocket, or very large-scale cluster (worker >10+ and services >100+), considering Gateway API rather than Ingress Controller is recommended.  
+Install **Gateway API CRDs**:
+```sh
+$ kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.3.0/standard-install.yaml
+```
+Ensure that installation was successfully.
+```sh
+$ kubectl get crd gatewayclasses.gateway.networking.k8s.io
+```
+</details>
+
 :::info A Real-World Scenario
 
 ### Deploying Bookinfo Applications
