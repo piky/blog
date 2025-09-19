@@ -104,13 +104,29 @@ $ kind create cluster --config kind-no-proxy-config.yaml
 ```
 **Install Cilium CNI:**
 ```sh
- $ cilium install --set kubeProxyReplacement=true --set gatewayAPI.enabled=true && cilium status --wait
+$ cilium install --set kubeProxyReplacement=true --set gatewayAPI.enabled=true && cilium status --wait
 ```
+**Verify installation successfully:**
 ```sh
- $ cilium config view
+$ cilium config view
 ```
 ```sh
 $ kubectl get nodes -o wide
+```
+
+### Installing Cloud Provider KIND
+```sh
+$ go install sigs.k8s.io/cloud-provider-kind@latest
+```
+```sh
+$ sudo install ~/go/bin/cloud-provider-kind /usr/local/bin
+```
+Run Cloud Provider KIND as a foreground process
+```sh
+$ tmux new -s cloud-provider-kind`
+```
+```sh
+$ cloud-provider-kind
 ```
 
 <details>
