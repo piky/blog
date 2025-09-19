@@ -350,7 +350,7 @@ $ echo $LB_IP
 ```
 **On local SSH client:**
 ```sh
-$ ssh -L 8080:<$IB_IP>:80 username@<SSH-SERVER>
+$ ssh -L 8080:<$LB_IP>:80 username@<SSH-SERVER>
 ```
 :::
 
