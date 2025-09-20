@@ -24,6 +24,7 @@ kind was primarily designed for testing Kubernetes itself, but may be used for l
 - Supports Linux, macOS and Windows.
 
 ## Pre-requisite
+Installing [Go](https://go.dev/doc/install)
 Installing [Docker](/blog/docker-quick-install)  
 Installing [kubectl](https://kubernetes.io/docs/tasks/tools/)  
 Installing [Helm CLI](https://helm.sh/docs/intro/install/) and  
