@@ -24,6 +24,7 @@ kind was primarily designed for testing Kubernetes itself, but may be used for l
 - Supports Linux, macOS and Windows.
 
 ## Pre-requisite
+Installing [Go](https://go.dev/doc/install)  
 Installing [Docker](/blog/docker-quick-install)  
 Installing [kubectl](https://kubernetes.io/docs/tasks/tools/)  
 Installing [Helm CLI](https://helm.sh/docs/intro/install/) and  
@@ -104,8 +105,27 @@ $ kind create cluster --config kind-no-proxy-config.yaml
 ```
 
 ### L3/L7 Traffic Management
+:::warning PRE-REQUISITE
+If you plan to enable Cilium Gateway API feature, the Gateway API CRDs must be installed first.
+:::
+
 <details>
-<summary>Option 1 : Ingress Controller</summary>
+<summary>Recommended : Kubernetes Gateway API</summary>
+
+[Gateway API](https://github.com/kubernetes-sigs/gateway-api) is ideal for large-scale cluster (i.e. 10+ workers and 100+ services). In addition to drop-in traditional Ingress Controller features, it also supports HTTP2/gRPC/WebSocket.  
+
+**Install Gateway API CRDs**:
+```sh
+$ kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.3.0/standard-install.yaml
+```
+Ensure that installation was successfully.
+```sh
+$ kubectl get crd gatewayclasses.gateway.networking.k8s.io
+```
+</details>
+
+<details>
+<summary>Optional : Ingress Controller</summary>
 
 ```sh
 $ kubectl apply -f https://kind.sigs.k8s.io/examples/ingress/deploy-ingress-nginx.yaml
@@ -121,22 +141,6 @@ $ kubectl apply -f https://kind.sigs.k8s.io/examples/ingress/usage.yaml
 ```
 ```sh
 $ kubectl -n ingress-nginx get services
-```
-</details>
-
-<details>
-<summary>Option 2 : Kubernetes Gateway API</summary>
-:::danger PRE-REQUISITE
-If you need Cilium Gateway API, the Gateway API CRDs must be installed first.
-:::
-[Gateway API](https://github.com/kubernetes-sigs/gateway-api) is ideal for large-scale cluster (i.e. 10+ workers and 100+ services). In addition to drop-in traditional Ingress Controller features, it also supports HTTP2/gRPC/WebSocket.  
-**Install Gateway API CRDs**:
-```sh
-$ kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.3.0/standard-install.yaml
-```
-Ensure that installation was successfully.
-```sh
-$ kubectl get crd gatewayclasses.gateway.networking.k8s.io
 ```
 </details>
 
@@ -178,7 +182,11 @@ $ cloud-provider-kind
 <details>
 <summary>Option 2 : using MetalLB</summary>
 <p>
+
 **Install MetalLB:**
+```sh
+$ helm repo add metallb https://metallb.github.io/metallb
+```
 ```sh
 $ helm install metallb metallb/metallb --namespace metallb-system --create-namespace
 ```
@@ -360,10 +368,13 @@ $ curl -s https://bookinfo.cilium.rocks/details/1 | jq .
 
 :::tip SSH TUNNEL
 Chances are you running KinD on a remote host and need to send traffic to KinD node IPs from a different host than where KinD is running.  
-**On remote KinD host**
+
+**On remote KinD host:**  
+Get load-balancer IP of the service exposing by KinD node.
 ```sh
-$ LB_IP=$(kubectl get gateway my-gateway -o jsonpath='{.status.addresses[0].value}')
+$ LB_IP=$(kubectl get svc cilium-gateway-my-gateway -o json | jq -r '.status.loadBalancer.ingress[0].ip')
 ```
+*Replace `cilium-gateway-my-gateway` with your intended service. Run `$ kubectl get svc` if not sure. 
 ```sh 
 $ echo $LB_IP
 ```
