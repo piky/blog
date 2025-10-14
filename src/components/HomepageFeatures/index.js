@@ -26,7 +26,7 @@ const FeatureList = [
     Svg: require('@site/static/img/crafty-penguin.svg').default,
     description: (
       <>
-        Savings often comes with ABSOLUTELY NO WARRANTY. Lock profits down by minimizing resolution time.
+        Savings often come with ABSOLUTELY NO WARRANTY. Lock profits down by minimizing resolution time.
       </>
     ),
   },
