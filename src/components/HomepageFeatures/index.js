@@ -4,32 +4,29 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Technical Consultant',
+    title: 'Tech Wizard',
     Svg: require('@site/static/img/tech-wizard.svg').default,
     description: (
       <>
-        Neither oversized tools nor over-engineered techniques. Just bring your wand.  
-        I am here to shine your way.
+        Neither oversized tools nor over-engineered techniques. Just bring your wand — I’m here to light your way.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Best-effort Delivery',
+    Svg: require('@site/static/img/mission_to_the_moon.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Lift your ideas to the moon and back — fast, high-quality, iterative, and on time. Every feedback matters.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Professional Service',
+    Svg: require('@site/static/img/crafty-penguin.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Savings often comes with ABSOLUTELY NO WARRANTY. Lock profits down by minimizing resolution time.
       </>
     ),
   },
