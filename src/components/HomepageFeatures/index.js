@@ -8,7 +8,7 @@ const FeatureList = [
     Svg: require('@site/static/img/tech-wizard.svg').default,
     description: (
       <>
-        Neither oversized tools nor over-engineered techniques. Just bring your wand — I’m here to light your way.
+        Neither oversized tools nor over-engineered techniques — just bring your wand. I’m here to light your way.
       </>
     ),
   },
@@ -17,7 +17,7 @@ const FeatureList = [
     Svg: require('@site/static/img/mission_to_the_moon.svg').default,
     description: (
       <>
-        Lift your ideas to the moon and back — fast, high-quality, iterative, and on time. Every feedback matters.
+        Launch your ideas to the moon and back — fast, refined, and driven by valuable feedback.
       </>
     ),
   },
@@ -26,7 +26,7 @@ const FeatureList = [
     Svg: require('@site/static/img/crafty-penguin.svg').default,
     description: (
       <>
-        Savings often come with ABSOLUTELY NO WARRANTY. Lock profits down by minimizing resolution time.
+        Savings likely come with ABSOLUTELY NO WARRANTY. Don’t let AI agents keep customers stuck in a loop.
       </>
     ),
   },
