@@ -14,10 +14,10 @@ const FeatureList = [
   },
   {
     title: 'Best-effort Delivery',
-    Svg: require('@site/static/img/mission_to_the_moon.svg').default,
+    Svg: require('@site/static/img/delivery-astronaut.svg').default,
     description: (
       <>
-        Launch your ideas to the moon and back — fast, refined, and driven by valuable feedback.
+        Take your ideas to the moon and back — fast, refined, and driven by valuable feedback.
       </>
     ),
   },
