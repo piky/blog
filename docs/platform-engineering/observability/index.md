@@ -6,16 +6,16 @@ tags: [container, kubernetes, cloud, cloud-native, iac, devops, sre, platform-en
 keywords: [container, kubernetes, cloud, cloud-native, iac, opentelemetry, signal, oltp, metrics, logs, traces]
 ---
 ## Prerequisite
-### Kubernetes cluster for deploying demo application
+### Kubernetes cluster
 :::tip references
-- [Create KinD cluster](https://blog.khainui.com/docs/software-engineering/dev-environment/kind-kubernetes-in-docker/develop-and-deploy-cloud-native-applications-with-kind)
+- [Create KinD cluster](https://blog.khainui.com/docs/software-engineering/dev-environment/kind-kubernetes-in-docker/develop-and-deploy-cloud-native-applications-with-kind) for deploying demo application
 :::
 ```sh
 kind create cluster
 ```
 ### SigNoz
-:::tip reference
-[Deploy SigNoz on Kubernetes with Helm](https://signoz.io/docs/install/kubernetes/)
+:::tip references
+- [Deploy SigNoz on Kubernetes with Helm](https://signoz.io/docs/install/kubernetes/)
 :::
 Create custom Helm values file:
 ```yaml title="signoz-custom-values.yaml"
@@ -68,8 +68,8 @@ helm install my-otel-demo open-telemetry/opentelemetry-demo --values my-values-f
 As of writing, Helm chart v0.38+ which bundled the OTEL DEMO v2.1.3 with `flagd-ui` service has Out-of-Memory issue.
 - [OpenTelemetry Helm chart repository](https://github.com/open-telemetry/opentelemetry-helm-charts)
 :::
-## Root cause analysis with Signal Correlation using SigNoz
+## Root cause analysis
 :::tip references
-[Exploring OpenTelemetry Demo Application with SigNoz](https://signoz.io/blog/opentelemetry-demo/#debugging-real-life-scenarios-with-signoz-simulated-by-the-otel-demo-app)
+- [Exploring OpenTelemetry Demo Application with SigNoz](https://signoz.io/blog/opentelemetry-demo/#debugging-real-life-scenarios-with-signoz-simulated-by-the-otel-demo-app)
 :::
 ![Service Map of OTEL DEMO app](https://pub-44a464d4394a43d6834ffdc08038cb38.r2.dev/docs/otel-demo-service-map.gif)
