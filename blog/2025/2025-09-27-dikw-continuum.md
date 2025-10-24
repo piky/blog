@@ -1,6 +1,6 @@
 ---
 slug: dikw-continuum
-title: Data, Information, Knowledge, Wisdom Continuum
+title: DIKW Continuum
 authors: piky
 tags: [note, fyi]
 keywords: [data, information, knowledge, insight , wisdom, dikw-continuum, knowledge-management]
