@@ -12,8 +12,9 @@ tags: [fyi, note]
 * [Netlify](https://www.netlify.com/)  
 * [Vercel](https://vercel.com/)  
 * [Lovable](https://lovable.dev/)  
-* [v0 by Vercel](https://v0.dev/)
-* [Stitch](https://stitch.withgoogle.com/)
+* [v0 by Vercel](https://v0.dev/)  
+* [Sevlla](https://sevalla.com/)
+* [Stitch](https://stitch.withgoogle.com/)  
 * หรือ [Render](https://render.com/)  
 
 ในที่สุดก็เลือกใช้ [GitHub Pages](https://pages.github.com/) เพราะจัดการได้สะดวก ทั้งในแง่ของ workflow และเนื้อหา ทุกอย่างรวมอยู่ใน monorepo เดียว  
