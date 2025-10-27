@@ -1,9 +1,11 @@
 import React from 'react';
-import SearchBar from '@theme-original/SearchBar';
 
-export default function SearchBarWrapper(props) {
+export default function SearchBarWrapper() {
   return (
-    <div style={{display: 'flex', alignItems: 'center'}}>
+    <div className="custom-search-wrapper">
+      <span className="search-icon">
+        🔍
+      </span>
       <div className="gcse-search"></div>
     </div>
   );

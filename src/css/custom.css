@@ -6,7 +6,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
+  --ifm-color-primary: #000000;
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
   --ifm-color-primary-darkest: #205d3b;
@@ -210,4 +210,38 @@ table.gsc-search-box td.gsc-input {
 }
 table.gsc-search-box td.gsc-search-button {
   padding: 0 !important;
+}
+/* ===== Add search icon inside input ===== */
+.custom-search-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  font-size: 14px;
+  color: #9ca3af;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Push input text to the right so it doesn't overlap icon */
+.gsc-input {
+  padding-left: 28px !important;
+}
+
+/* Compact layout fixes */
+.navbar .custom-search-wrapper {
+  transform: scale(0.85);
+  transform-origin: right center;
+}
+
+.gsc-input-box {
+  border-radius: 20px 0 0 20px !important;
+}
+
+.gsc-search-button {
+  border-radius: 0 20px 20px 0 !important;
 }
