@@ -32,3 +32,182 @@
 .hidden {
 display: none !important;
 }
+
+/* --- Improve Google CSE Search Bar --- */
+.gcse-search {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.gsc-control-cse {
+  background: none !important;
+  border: none !important;
+}
+
+.gsc-search-box {
+  padding: 0 !important;
+}
+
+.gsc-input-box {
+  border: 1.5px solid #ccc !important;
+  border-radius: 8px 0 0 8px !important;
+  padding: 6px 10px !important;
+  box-shadow: none !important;
+}
+
+.gsc-input {
+  font-size: 15px !important;
+}
+
+.gsc-search-button {
+  background-color: #3578e5 !important;
+  border-radius: 0 8px 8px 0 !important;
+  border: none !important;
+  padding: 6px 20px !important;
+}
+
+.gsc-search-button:hover {
+  background-color: #285bb5 !important;
+}
+
+input.gsc-input::placeholder {
+  color: #999;
+}
+
+.gsib_a {
+  padding: 2px !important;
+}
+
+.gsc-branding {
+  display: none !important;
+}
+.gsc-input-box:hover {
+  border-color: #888 !important;
+}
+
+.gsc-input-box:focus-within {
+  border-color: #3578e5 !important;
+  box-shadow: 0 0 4px rgba(53, 120, 229, 0.5) !important;
+}
+/* ================================
+   Clean Google Search Bar Styling
+   Matching Docusaurus Theme
+================================== */
+:root {
+  --search-border: #d1d5db;
+  --search-bg: #ffffff;
+  --search-text: #1f2937;
+  --search-focus: #3578e5;
+}
+
+/* Dark mode support */
+html[data-theme='dark'] {
+  --search-border: #374151;
+  --search-bg: #1f2937;
+  --search-text: #f3f4f6;
+  --search-focus: #4f8cff;
+}
+
+.gcse-search {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.gsc-control-cse {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.gsc-search-box {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.gsc-input-box {
+  border: 1px solid var(--search-border) !important;
+  border-right: none !important;
+  border-radius: 6px 0 0 6px !important;
+  background: var(--search-bg) !important;
+  box-shadow: none !important;
+  height: 36px !important;
+  display: flex;
+  align-items: center;
+}
+
+input.gsc-input {
+  background: transparent !important;
+  color: var(--search-text) !important;
+  font-size: 14px !important;
+  padding: 5px 10px !important;
+}
+
+input.gsc-input::placeholder {
+  color: #9ca3af !important;
+}
+
+.gsc-search-button {
+  background: var(--search-focus) !important;
+  border: none !important;
+  border-radius: 0 6px 6px 0 !important;
+  padding: 0 14px !important;
+  cursor: pointer;
+}
+
+.gsc-search-button:hover {
+  opacity: 0.9;
+}
+
+.gsc-branding, .gsc-clear-button {
+  display: none !important;
+}
+.navbar .gcse-search input.gsc-input {
+  height: 32px !important;
+}
+.navbar .gsc-input-box {
+  height: 32px !important;
+}
+.navbar .gsc-search-button {
+  height: 32px !important;
+}
+/* ===== Compact Navbar Search ===== */
+.navbar .gcse-search {
+  transform: scale(0.85); /* Makes search bar compact */
+  transform-origin: right center;
+  margin-right: -8px; /* Tighten spacing to fit navbar */
+}
+
+.navbar .gsc-input-box {
+  height: 30px !important;
+  border-radius: 15px 0 0 15px !important;
+}
+
+.navbar input.gsc-input {
+  padding: 4px 10px !important;
+  font-size: 13px !important;
+}
+
+.navbar .gsc-search-button {
+  height: 30px !important;
+  border-radius: 0 15px 15px 0 !important;
+  padding: 0 12px !important;
+}
+
+/* Remove weird outline */
+.gsc-input-box:focus-within {
+  box-shadow: 0 0 2px var(--search-focus) !important;
+}
+
+/* Prevent layout shift */
+.gsc-control-cse, .gsc-search-box {
+  width: 100% !important;
+}
+/* Remove Google padding junk */
+table.gsc-search-box td.gsc-input {
+  padding: 0 !important;
+}
+table.gsc-search-box td.gsc-search-button {
+  padding: 0 !important;
+}
