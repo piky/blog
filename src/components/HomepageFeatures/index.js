@@ -26,7 +26,7 @@ const FeatureList = [
     Svg: require('@site/static/img/crafty-penguin.svg').default,
     description: (
       <>
-        Savings likely come with ABSOLUTELY NO WARRANTY. Don’t let AI agents keep customers stuck in a loop.
+        Saving likely comes with ABSOLUTELY NO WARRANTY. Don’t let AI agents keep customers stuck in a loop.
       </>
     ),
   },
