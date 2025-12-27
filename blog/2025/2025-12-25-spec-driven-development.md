@@ -12,7 +12,7 @@ graph TD
     classDef phase fill:#f6f8fa,stroke:#d0d7de,stroke-width:2px,color:#24292f;
     classDef action fill:#0969da,stroke:#0969da,stroke-width:2px,color:#ffffff,rx:5,ry:5;
     classDef artifact fill:#ddf4ff,stroke:#54aeff,stroke-width:1px,stroke-dasharray: 5 5,color:#24292f;
-    classDef context fill:#fff8c5,stroke:#d4a72c,stroke-width:2px,color:#24292f;
+    classDef context fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,stroke-dasharray: 5 5,color:#24292f;
 
     %% --- Nodes & Structure ---
 
@@ -20,7 +20,7 @@ graph TD
     subgraph Stage1 [1 Define the Constitution]
         direction TB
         ConstNode[Establish]:::phase
-        ConstFile(constitution.md<br/>Ground rules, Principles, Standards):::context
+        ConstFile[<b>constitution.md</b><br/>Ground rules, Principles, Standards]:::context
         ConstNode --> ConstFile
     end
 
