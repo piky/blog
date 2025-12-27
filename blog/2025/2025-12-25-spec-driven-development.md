@@ -5,7 +5,7 @@ authors: piky
 tags: [opinion, fyi, note]
 keywords: [ai, gen-ai, llm, slm]
 ---
-ขั้นตอนการพัฒนาซอฟต์แวร์ตามแนวทาง Spec-driven Development ด้วย GitHub Spec Kit และ Copilot
+ขั้นตอนการพัฒนาซอฟต์แวร์ตามแนวทาง Spec-driven Development(SDD) ด้วย GitHub Spec Kit และ Copilot
 ```mermaid
 graph TD
     %% --- Styling ---
@@ -17,15 +17,15 @@ graph TD
     %% --- Nodes & Structure ---
 
     %% Stage 1: Constitution
-    subgraph Stage1 [1. Foundation]
+    subgraph Stage1 [1 Define the Constitution]
         direction TB
-        ConstNode[Define Constitution]:::phase
-        ConstFile(constitution.md<br/>Rules, Principles, Standards):::context
+        ConstNode[Establish]:::phase
+        ConstFile(constitution.md<br/>Ground rules, Principles, Standards):::context
         ConstNode --> ConstFile
     end
 
     %% Stage 2: Specify
-    subgraph Stage2 [2. Specify Features]
+    subgraph Stage2 [2 Specify Features]
         direction TB
         CmdSpecify(("/specify")):::action
         SpecNode[Generate Specs]:::phase
@@ -36,7 +36,7 @@ graph TD
     end
 
     %% Stage 3: Plan
-    subgraph Stage3 [3. Plan Implementation]
+    subgraph Stage3 [3 Plan Implementation]
         direction TB
         CmdPlan(("/plan")):::action
         PlanNode[Create Blueprint]:::phase
@@ -47,7 +47,7 @@ graph TD
     end
 
     %% Stage 4: Break into Tasks
-    subgraph Stage4 [4. Break into Tasks]
+    subgraph Stage4 [4 Break into Tasks]
         direction TB
         CmdTasks(("/tasks")):::action
         TaskNode[Granularize]:::phase
@@ -58,7 +58,7 @@ graph TD
     end
 
     %% Stage 5: Implementation
-    subgraph Stage5 [5. Implement Code]
+    subgraph Stage5 [5 Implement Code]
         direction TB
         CmdImpl(("/implement")):::action
         ImplNode[Generate Code]:::phase
@@ -69,11 +69,13 @@ graph TD
     end
 
     %% Stage 6: Analyze & Clarify (Floating Tool)
-    subgraph Stage6 [6. Continuous Review]
+    subgraph Stage6 [6 Continuous Review]
         direction TB
-        CmdReview(("/analyze<br/>/clarify")):::action
+        CmdAnalyze(("/analyze")):::action
+        CmdClarify(("/clarify")):::action
         ReviewNode[Check Consistency<br/>Verify Intent]:::phase
-        CmdReview --- ReviewNode
+        CmdAnalyze --- ReviewNode
+        CmdClarify --- ReviewNode
     end
 
     %% --- Flow & Dependencies ---
@@ -104,3 +106,28 @@ graph TD
     %% Layout adjustments
     linkStyle default stroke:#57606a,stroke-width:2px;
 ```
+<!--truncate-->
+1. **Define the Constitution:** Establish the
+  - ground rules 
+  - principles 
+  - standards for the entire project in a `constitution.md` file.  
+
+This document sets constraints and context that the AI agent references throughout the process.  
+
+2. Specify Features: Use the /specify command in Copilot Chat to define what to build:
+  - features
+  - user stories
+  - acceptance criteria rather than how.  
+
+The AI helps generate detailed specification documents (often in Markdown).  
+
+3. Plan the Implementation: Use the /plan command to create a technical blueprint. The AI, using the context from the specification and constitution, generates a detailed plan including:
+  - technology choices/frameworks
+  - architecture
+  - data models.  
+
+4. Break into Tasks: The /tasks command instructs the AI to break down the plan into granular, actionable steps with clear acceptance criteria. 
+
+5. Implement the Code: Finally, use the /implement command or manually prompt Copilot Chat to generate the code for the defined tasks. The AI leverages all the previously generated documentation to provide highly contextual and accurate code suggestions.
+
+6. Analyze and Clarify: The /analyze and /clarify commands can be used at any point to check for inconsistencies or missing information in the specifications, ensuring all stakeholders (human and AI) agree on the intent before implementation.
