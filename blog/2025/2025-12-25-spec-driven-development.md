@@ -12,7 +12,7 @@ graph TD
     classDef phase fill:#f6f8fa,stroke:#d0d7de,stroke-width:2px,color:#24292f;
     classDef action fill:#0969da,stroke:#0969da,stroke-width:2px,color:#ffffff,rx:5,ry:5;
     classDef artifact fill:#ddf4ff,stroke:#54aeff,stroke-width:1px,stroke-dasharray: 5 5,color:#24292f;
-    classDef context fill:#fff8c5,stroke:#d4a72c,stroke-width:2px,color:#24292f;
+    classDef context fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,stroke-dasharray: 5 5,color:#24292f;
 
     %% --- Nodes & Structure ---
 
@@ -20,7 +20,7 @@ graph TD
     subgraph Stage1 [1 Define the Constitution]
         direction TB
         ConstNode[Establish]:::phase
-        ConstFile(constitution.md<br/>Ground rules, Principles, Standards):::context
+        ConstFile[<b>constitution.md</b><br/>Ground rules, Principles, Standards]:::context
         ConstNode --> ConstFile
     end
 
@@ -40,7 +40,7 @@ graph TD
         direction TB
         CmdPlan(("/plan")):::action
         PlanNode[Create Blueprint]:::phase
-        PlanArtifact(Technical Plan<br/>Tech, Arch, Data Models):::artifact
+        PlanArtifact(Technical Plan<br/>Tech stacks, Architecture, Data Models):::artifact
         
         CmdPlan --> PlanNode
         PlanNode --> PlanArtifact
@@ -114,20 +114,20 @@ graph TD
 
 This document sets constraints and context that the AI agent references throughout the process.  
 
-2. Specify Features: Use the /specify command in Copilot Chat to define what to build:
+2. **Specify Features:** Use the `/specify` command in Copilot Chat to define what to build:
   - features
   - user stories
   - acceptance criteria rather than how.  
 
 The AI helps generate detailed specification documents (often in Markdown).  
 
-3. Plan the Implementation: Use the /plan command to create a technical blueprint. The AI, using the context from the specification and constitution, generates a detailed plan including:
-  - technology choices/frameworks
+3. **Plan the Implementation:** Use the `/plan` command to create a technical blueprint. The AI, using the context from the specification and constitution, generates a detailed plan including:
+  - technology stacks/frameworks
   - architecture
   - data models.  
 
-4. Break into Tasks: The /tasks command instructs the AI to break down the plan into granular, actionable steps with clear acceptance criteria. 
+4. **Break into Tasks:** The `/tasks` command instructs the AI to break down the plan into granular, actionable steps with clear acceptance criteria. 
 
-5. Implement the Code: Finally, use the /implement command or manually prompt Copilot Chat to generate the code for the defined tasks. The AI leverages all the previously generated documentation to provide highly contextual and accurate code suggestions.
+5. **Implement the Code:** Finally, use the `/implement` command or manually prompt Copilot Chat to generate the code for the defined tasks. The AI leverages all the previously generated documentation to provide highly contextual and accurate code suggestions.
 
-6. Analyze and Clarify: The /analyze and /clarify commands can be used at any point to check for inconsistencies or missing information in the specifications, ensuring all stakeholders (human and AI) agree on the intent before implementation.
+6. **Analyze and Clarify:** The `/analyze` and `/clarify` commands can be used at any point to check for inconsistencies or missing information in the specifications, ensuring all stakeholders (human and AI) agree on the intent before implementation.
