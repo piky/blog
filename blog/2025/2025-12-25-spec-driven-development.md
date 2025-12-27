@@ -5,7 +5,7 @@ authors: piky
 tags: [opinion, fyi, note]
 keywords: [ai, gen-ai, llm, slm]
 ---
-ขั้นตอนการพัฒนาซอฟต์แวร์ตามแนวทาง Spec-driven Development ด้วย GitHub Spec Kit และ Copilot
+ขั้นตอนการพัฒนาซอฟต์แวร์ตามแนวทาง Spec-driven Development(SDD) ด้วย GitHub Spec Kit และ Copilot
 ```mermaid
 graph TD
     %% --- Styling ---
@@ -17,15 +17,15 @@ graph TD
     %% --- Nodes & Structure ---
 
     %% Stage 1: Constitution
-    subgraph Stage1 [1. Foundation]
+    subgraph Stage1 [1 Define the Constitution]
         direction TB
-        ConstNode[Define Constitution]:::phase
-        ConstFile(constitution.md<br/>Rules, Principles, Standards):::context
+        ConstNode[Establish]:::phase
+        ConstFile(constitution.md<br/>Ground rules, Principles, Standards):::context
         ConstNode --> ConstFile
     end
 
     %% Stage 2: Specify
-    subgraph Stage2 [2. Specify Features]
+    subgraph Stage2 [2 Specify Features]
         direction TB
         CmdSpecify(("/specify")):::action
         SpecNode[Generate Specs]:::phase
@@ -36,7 +36,7 @@ graph TD
     end
 
     %% Stage 3: Plan
-    subgraph Stage3 [3. Plan Implementation]
+    subgraph Stage3 [3 Plan Implementation]
         direction TB
         CmdPlan(("/plan")):::action
         PlanNode[Create Blueprint]:::phase
@@ -47,7 +47,7 @@ graph TD
     end
 
     %% Stage 4: Break into Tasks
-    subgraph Stage4 [4. Break into Tasks]
+    subgraph Stage4 [4 Break into Tasks]
         direction TB
         CmdTasks(("/tasks")):::action
         TaskNode[Granularize]:::phase
@@ -58,7 +58,7 @@ graph TD
     end
 
     %% Stage 5: Implementation
-    subgraph Stage5 [5. Implement Code]
+    subgraph Stage5 [5 Implement Code]
         direction TB
         CmdImpl(("/implement")):::action
         ImplNode[Generate Code]:::phase
@@ -69,11 +69,13 @@ graph TD
     end
 
     %% Stage 6: Analyze & Clarify (Floating Tool)
-    subgraph Stage6 [6. Continuous Review]
+    subgraph Stage6 [6 Continuous Review]
         direction TB
-        CmdReview(("/analyze<br/>/clarify")):::action
+        CmdAnalyze(("/analyze")):::action
+        CmdClarify(("/clarify")):::action
         ReviewNode[Check Consistency<br/>Verify Intent]:::phase
-        CmdReview --- ReviewNode
+        CmdAnalyze --- ReviewNode
+        CmdClarify --- ReviewNode
     end
 
     %% --- Flow & Dependencies ---
