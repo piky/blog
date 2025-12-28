@@ -101,7 +101,7 @@ graph TD
     Stage3 <-.-|Refine| ReviewNode
     Stage4 <-.-|Refine| ReviewNode
     %% Anchor to bottom
-    ImplNode ~~~ ReviewNode
+    CodeBase ~~~ ReviewNode
 
     %% Layout adjustments
     linkStyle default stroke:#57606a,stroke-width:2px;
