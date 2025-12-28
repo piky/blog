@@ -5,7 +5,7 @@ authors: piky
 tags: [opinion, fyi, note]
 keywords: [ai, gen-ai, llm, slm]
 ---
-ขั้นตอนการพัฒนาซอฟต์แวร์ตามแนวทาง <a href="https://github.com/github/spec-kit/blob/main/spec-driven.md/" style={{color: 'blue', textDecoration: 'underline', textDecorationStyle: 'dotted'}}>Spec-driven Development</a> ด้วย <a href="https://github.com/github/spec-kit/blob/main/spec-driven.md/" style={{color: 'blue', textDecoration: 'underline', textDecorationStyle: 'dotted'}}>GitHub Spec Kit</a> และ Copilot
+ขั้นตอนการพัฒนาซอฟต์แวร์ตามแนวทาง <a href="https://github.com/github/spec-kit/blob/main/spec-driven.md/" style={{color: 'blue', textDecoration: 'underline', textDecorationStyle: 'dotted'}}>Spec-driven Development</a> ด้วย <a href="https://github.com/github/spec-kit" style={{color: 'blue', textDecoration: 'underline', textDecorationStyle: 'dotted'}}>GitHub Spec Kit</a> และ Copilot
 ```mermaid
 graph TD
     %% --- Styling ---
