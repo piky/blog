@@ -5,14 +5,13 @@ authors: piky
 tags: [opinion, fyi, note]
 keywords: [ai, gen-ai, llm, slm]
 ---
-ขั้นตอนการพัฒนาซอฟต์แวร์ตามแนวทาง Spec-driven Development(SDD) ด้วย [GitHub Spec Kit](https://github.com/github/spec-kit) และ Copilot
+ขั้นตอนการพัฒนาซอฟต์แวร์ตามแนวทาง <a href="https://github.com/github/spec-kit/blob/main/spec-driven.md/" style={{color: 'blue', textDecoration: 'underline', textDecorationStyle: 'dotted'}}>Spec-driven Development</a> ด้วย <a href="https://github.com/github/spec-kit/blob/main/spec-driven.md/" style={{color: 'blue', textDecoration: 'underline', textDecorationStyle: 'dotted'}}>GitHub Spec Kit</a> และ Copilot
 ```mermaid
 graph TD
     %% --- Styling ---
     classDef phase fill:#f6f8fa,stroke:#d0d7de,stroke-width:2px,color:#24292f;
     classDef action fill:#0969da,stroke:#0969da,stroke-width:2px,color:#ffffff,rx:5,ry:5;
     classDef artifact fill:#ddf4ff,stroke:#54aeff,stroke-width:1px,stroke-dasharray: 5 5,color:#24292f;
-    classDef context fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,stroke-dasharray: 5 5,color:#24292f;
 
     %% --- Nodes & Structure ---
 
@@ -20,7 +19,7 @@ graph TD
     subgraph Stage1 [<b>1 Define the Constitution</b>]
         direction TB
         ConstNode[Establish]:::phase
-        ConstFile[<b>CONSTITUTION.md</b><br/>&lcub;Ground rules, <br/>Principles, <br/>Standards&rcub;]:::context
+        ConstFile[<b>CONSTITUTION.md</b><br/>&lcub;Ground rules, <br/>Principles, <br/>Standards&rcub;]:::artifact
         ConstNode --> ConstFile
     end
 
