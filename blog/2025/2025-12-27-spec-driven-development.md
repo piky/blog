@@ -40,7 +40,7 @@ graph TD
         direction TB
         CmdPlan(("/plan")):::action
         PlanNode[Create Blueprint]:::phase
-        PlanArtifact(<b>Technical Plan</b><br/>&lcub;Tech stacks, <br/>Architecture, <br/>Data Models&rcub;):::artifact
+        PlanArtifact(<b>Technical Plan</b><br/>&lcub;Tech Stacks, <br/>Architecture, <br/>Data Models&rcub;):::artifact
         
         CmdPlan --> PlanNode
         PlanNode --> PlanArtifact
