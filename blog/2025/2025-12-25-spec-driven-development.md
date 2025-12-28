@@ -20,7 +20,7 @@ graph TD
     subgraph Stage1 [1 Define the Constitution]
         direction TB
         ConstNode[Establish]:::phase
-        ConstFile[<b>constitution.md</b><br/>Ground rules, Principles, Standards]:::context
+        ConstFile[<b>CONSTITUTION.md</b><br/>Ground rules, Principles, Standards]:::context
         ConstNode --> ConstFile
     end
 
@@ -101,7 +101,7 @@ graph TD
     Stage3 <-.-|Refine| ReviewNode
     Stage4 <-.-|Refine| ReviewNode
     %% Anchor to bottom
-    ImplNode ~~~ ReviewNode
+    CodeBase ~~~ ReviewNode
 
     %% Layout adjustments
     linkStyle default stroke:#57606a,stroke-width:2px;
