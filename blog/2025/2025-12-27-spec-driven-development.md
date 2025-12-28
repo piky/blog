@@ -5,7 +5,7 @@ authors: piky
 tags: [opinion, fyi, note]
 keywords: [ai, gen-ai, llm, slm]
 ---
-ขั้นตอนการพัฒนาซอฟต์แวร์ตามแนวทาง Spec-driven Development(SDD) ด้วย GitHub Spec Kit และ Copilot
+ขั้นตอนการพัฒนาซอฟต์แวร์ตามแนวทาง Spec-driven Development(SDD) ด้วย [GitHub Spec Kit](https://github.com/github/spec-kit) และ Copilot
 ```mermaid
 graph TD
     %% --- Styling ---
@@ -130,4 +130,6 @@ The AI helps generate detailed specification documents (often in Markdown).
 
 5. **Implement the Code:** Finally, use the `/implement` command or manually prompt Copilot Chat to generate the code for the defined tasks. The AI leverages all the previously generated documentation to provide highly contextual and accurate code suggestions.
 
-6. **Analyze and Clarify:** The `/analyze` and `/clarify` commands can be used at any point to check for inconsistencies or missing information in the specifications, ensuring all stakeholders (human and AI) agree on the intent before implementation.
+6. **Analyze and Clarify:** The `/analyze` and `/clarify` commands can be used at any point to check for inconsistencies or missing information in the specifications, ensuring all stakeholders (human and AI) agree on the intent before implementation.  
+
+<a href="https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/" style={{color: 'blue', textDecoration: 'underline', textDecorationStyle: 'dotted'}}>Read more on GitHub's blog</a>
