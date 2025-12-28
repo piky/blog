@@ -17,59 +17,59 @@ graph TD
     %% --- Nodes & Structure ---
 
     %% Stage 1: Constitution
-    subgraph Stage1 [1 Define the Constitution]
+    subgraph Stage1 [<b>1 Define the Constitution</b>]
         direction TB
         ConstNode[Establish]:::phase
-        ConstFile[<b>CONSTITUTION.md</b><br/>Ground rules, Principles, Standards]:::context
+        ConstFile[<b>CONSTITUTION.md</b><br/>&lcub;Ground rules, <br/>Principles, <br/>Standards&rcub;]:::context
         ConstNode --> ConstFile
     end
 
     %% Stage 2: Specify
-    subgraph Stage2 [2 Specify Features]
+    subgraph Stage2 [<b>2 Specify Features</b>]
         direction TB
         CmdSpecify(("/specify")):::action
         SpecNode[Generate Specs]:::phase
-        SpecArtifact(Specification Docs<br/>Features, Stories, Criteria):::artifact
+        SpecArtifact(<b>Specification Docs</b><br/>&lcub;Features, <br/>Stories, <br/>Criteria&rcub;):::artifact
         
         CmdSpecify --> SpecNode
         SpecNode --> SpecArtifact
     end
 
     %% Stage 3: Plan
-    subgraph Stage3 [3 Plan Implementation]
+    subgraph Stage3 [<b>3 Plan Implementation</b>]
         direction TB
         CmdPlan(("/plan")):::action
         PlanNode[Create Blueprint]:::phase
-        PlanArtifact(Technical Plan<br/>Tech stacks, Architecture, Data Models):::artifact
+        PlanArtifact(<b>Technical Plan</b><br/>&lcub;Tech stacks, <br/>Architecture, <br/>Data Models&rcub;):::artifact
         
         CmdPlan --> PlanNode
         PlanNode --> PlanArtifact
     end
 
     %% Stage 4: Break into Tasks
-    subgraph Stage4 [4 Break into Tasks]
+    subgraph Stage4 [<b>4 Break into Tasks</b>]
         direction TB
         CmdTasks(("/tasks")):::action
         TaskNode[Granularize]:::phase
-        TaskArtifact(Actionable Checklist<br/>Step-by-step Tasks):::artifact
+        TaskArtifact(<b>Step-by-step Tasks</b><br/><b>Actionable Checklist</b>):::artifact
         
         CmdTasks --> TaskNode
         TaskNode --> TaskArtifact
     end
 
     %% Stage 5: Implementation
-    subgraph Stage5 [5 Implement Code]
+    subgraph Stage5 [<b>5 Implement Code</b>]
         direction TB
         CmdImpl(("/implement")):::action
         ImplNode[Generate Code]:::phase
-        CodeBase(Source Code):::artifact
+        CodeBase(<b>Source Code</b>):::artifact
         
         CmdImpl --> ImplNode
         ImplNode --> CodeBase
     end
 
     %% Stage 6: Analyze & Clarify (Floating Tool)
-    subgraph Stage6 [6 Continuous Review]
+    subgraph Stage6 [<b>6 Continuous Review</b>]
         direction TB
         CmdAnalyze(("/analyze")):::action
         CmdClarify(("/clarify")):::action
