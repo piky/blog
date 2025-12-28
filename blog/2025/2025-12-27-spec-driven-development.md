@@ -109,7 +109,7 @@ graph TD
 1. **Define the Constitution:** Establish the
   - ground rules 
   - principles 
-  - standards for the entire project in a `constitution.md` file.  
+  - standards for the entire project in a `CONSTITUTION.md` file.  
 
 This document sets constraints and context that the AI agent references throughout the process.  
 
